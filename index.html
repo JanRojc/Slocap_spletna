@@ -6,24 +6,90 @@
 <META NAME="keywords" CONTENT="Slocap d.o.o., Sežana, Proizvajalec, PVC, kapic, Kapice, polilaminat za steklenice penin, kapice Alumini za sodčke">
 <META NAME="description" CONTENT="Slocap d.o.o. Sežana. Proizvajalec PVC kapic, Kapice polilaminat za steklenice penin, Kapice Alumini za sodčke">
 <META NAME="robots" CONTENT="FOLLOW,INDEX">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+
 <style type="text/css">
 
 body {
-	background-color: #000000;
+  background-color:#999999;
+	background-image: url(images/background_logo.png);
+	width:50%;
+	/*overflow: hidden;*/
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+}
+
+#test {
+  background-color:#999999;
+  background-image: url(images/top_background.png);
+  background-repeat:no-repeat;
+  width:818px;
+  flex: 1 1 auto;
+}
+
+.button {
+  border: none;
+  background: none;
+  cursor:pointer;
+  color: #F8CF7F;
+	font-size: 14px;
+	padding-left: 14px;
+	line-height: 24px;
+}
+
+.button2 {
+  border: none;
+  background: none;
+  cursor:pointer;
+  color: #F8CF7F;
+	font-size: 11px;
+	padding-left: 23px;
+	line-height: 16px;
+}
+
+.button3 {
+  border: none;
+  background: none;
+  cursor:pointer;
+	line-height: 16px;
+}
+
+.button:hover, .button2:hover {
+	text-decoration: underline;
+}
+
+.position {
+  position:relative;
+}
+
+.positionSlikaSide {
+  position:absolute;
+  left:20px;
+  top:170px;
 }
 
 .rounded_top {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .rounded_bot {
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .paddingTop {
   padding-top: 15px;
+}
+
+#dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4, #dropdownId5, #dropdownId6, #dropdownId7, #dropdownId8 {
+  background-image: url("images/swipe.png");
 }
 
 .style1 {
@@ -66,7 +132,6 @@ a:active {
 	line-height: 16px;
 }
 
-
 .style22 {
 	color: #FFFFFF;
 	font-family: Tahoma;
@@ -85,16 +150,27 @@ a:active {
 	color: #F8CF7F;
 	font-family: Tahoma;
 	font-size: 14px;
+	padding-left: 14px;
+}
+.style9 {
+	color: #F8CF7F;
+	font-family: Tahoma;
+	font-size: 14px;
 }
 
 </style>
-<link href="default.css" rel="stylesheet" type="text/css" />
+<link href="css/default.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
-<table width="681" border="0" align="center" cellpadding="0" cellspacing="0">
+<body id="bodyId">
+    <div id="test">
+      <script>
+        document.getElementById("test").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
+        document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
+      </script>
+<table width="818" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td colspan="2"><div align="right"><span class="style1">
+    <td colspan="2" style="padding-top:10px; padding-right:30px"><div align="right"><span class="style1">
 <a href="index.html" target="_self">Slovenščina</a>&nbsp;&nbsp;&nbsp;
 <a href="ger/index.html" target="_self">Deutsch</a>&nbsp;&nbsp;&nbsp;
 <a href="cro/index.html" target="_self">Hrvatski</a>&nbsp;&nbsp;&nbsp;
@@ -104,46 +180,40 @@ a:active {
 </span></div></td>
   </tr>
   <tr>
-    <td colspan="2"><a href="index.html"><img src="images/logo.png" alt="SLOCAP d.o.o. Sežana" width="818" height="155" border="0" /></a></td>
+    <td colspan="2"><a href="index.html"><img src="images/logo_left.png" style="margin-left: 20px" alt="SLOCAP d.o.o. Sežana"  border="0" /></a>
+	<img src="images/logo_right.png" alt="SLOCAP d.o.o. Sežana" border="0" /></</td>
   </tr>
   <tr>
     <td colspan="2">&nbsp;</td>
   </tr>
   <tr>
-    <td align="left" valign="top" bgcolor="#333333" class="rounded_top rounded_bot paddingTop" style="width: 216px;"><a href="index.html" target="_self" class="style2">Doma</a><br />
-        <a href="opodjetju.html" target="_self" class="style2">O podjetju</a><br />
-      <a href="proizvodi.html" target="_self" class="style2">Proizvodi</a><br />
-        <span class="style2"><a href="mapa.html" target="_self">Kontakt</a>
-</p><br />    
-    </span><div style="padding-left:20px;"><img src="images/podjetje_side.jpg" alt="Slocap d.o.o. Sežana" width="176" height="264" border="0" /><br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-    </div></td>
-    <td align="left" valign="top" style="padding-top:15px;"><span class="style7">Dobrodošli!</span><br />
-      <br />
-      <span class="style5">Prišli ste na našo spletno stran, kjer si lahko poiščete marsikaj v zvezi z našim podjetjem. </span><br />
-    <br />
-    <span class="style5">Na strani  s proizvodi  lahko preverite, kaj vse vam nudimo. Na strani o podjetju je predstavljena</span><br />
-    <span class="style5">kratka zgodovina našega podjetja in od kje prihajamo. Na zemljevidu  si lahko ogledate, kje točno se</span><br />
-    <span class="style5">nahajamo, lahko pa si tudi poiščete pot do nas preko našega interaktivnega zemljevida.</span><br />
-    <br />
-    <span class="style5">Želimo vam čimbolj prijetno brskanje po naših straneh in  dobro poslovno sodelovanje v prihodnosti.</span></td>
+    <td id="dropdownPlaceholder" align="left" valign="top"  style="width: 216px; height:600px;">
+     <div id="divId" style="width: 216px; height:600px; background-color:#333333" class="rounded_top rounded_bot paddingTop position">
+      <div id="dropdownId7" class="lul"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div>
+      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div>
+      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div>
+      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div>
+      <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br />
+
+
+    	</div>
+    </div>
+    </td>
+    <td id="mainPlaceholder" align="left" valign="top" style="width:588" class="style5 paddingTop">
+      
+      
+      
+      
+    </td>
   </tr>
   <tr>
     <td colspan="2" class="style1"><div align="center">&nbsp;</div></td>
   </tr>
-  <tr>
-    <td colspan="2" class="style1"><div align="center"> <a href="http://www.slomarketing.com" title="Gostovanje spletne strani nam omogočajo pri Slomarketing.com">Gostovanje Spletnih Strani - Slomarketing.com</a></div></td>
-  </tr>
 </table>
-<div class="optimizacija">Slocap d.o.o. Sežana. Proizvajalec PVC kapic, Kapice polilaminat za steklenice penin, Kapice Alumini za sodčke</div>
+<div class="optimizacija">Slocap d.o.o. Sežana. Proizvajalec PVC kapic, Kapice polilaminat za steklenice penin, Kapice Aluminij za sodčke</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/ScrollTrigger.min.js"></script>
+<script src="script/script.js"></script>
+</div>
 </body>
 </html>
