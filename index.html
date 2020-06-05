@@ -9,9 +9,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
 
 <style type="text/css">
-<!--
+
 body {
 	background-color: #000000;
+	/*overflow: hidden;*/
 }
 
 body::-webkit-scrollbar {
@@ -38,7 +39,14 @@ body::-webkit-scrollbar {
 	line-height: 16px;
 }
 
-button:hover {
+.button3 {
+  border: none;
+  background: none;
+  cursor:pointer;
+	line-height: 16px;
+}
+
+.button:hover, .button2:hover {
 	text-decoration: underline;
 }
 
@@ -128,13 +136,19 @@ a:active {
 	color: #F8CF7F;
 	font-family: Tahoma;
 	font-size: 14px;
+	padding-left: 14px;
 }
--->
+.style9 {
+	color: #F8CF7F;
+	font-family: Tahoma;
+	font-size: 14px;
+}
+
 </style>
 <link href="css/default.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body id="bodyId">
 <table width="681" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td colspan="2"><div align="right"><span class="style1">
@@ -153,7 +167,8 @@ a:active {
     <td colspan="2">&nbsp;</td>
   </tr>
   <tr>
-    <td id="dropdownPlaceholder" align="left" valign="top" bgcolor="#333333" class="rounded_top rounded_bot paddingTop position" style="width: 216px; height:600px;">
+    <td id="dropdownPlaceholder" align="left" valign="top"  style="width: 216px; height:600px;">
+     <div id="divId" style="width: 216px; height:600px; background-color:#333333" class="rounded_top rounded_bot paddingTop position">
       <div id="dropdownId7" class="lul"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div>
       <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div>
       <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div>
@@ -161,22 +176,15 @@ a:active {
       <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br />
 
 
-
-
-
-
-
-    </div></td>
+    	</div>
+    </div>
+    </td>
     <td id="mainPlaceholder" align="left" valign="top" style="width:588" class="style5 paddingTop">
-      <span class="style7">Dobrodošli!</span><br />
-      <br />
-      <span class="style5">Prišli ste na našo spletno stran, kjer si lahko poiščete marsikaj v zvezi z našim podjetjem. </span><br />
-    <br />
-    <span class="style5">Na strani  s proizvodi  lahko preverite, kaj vse vam nudimo. Na strani o podjetju je predstavljena</span><br />
-    <span class="style5">kratka zgodovina našega podjetja in od kje prihajamo. Na zemljevidu  si lahko ogledate, kje točno se</span><br />
-    <span class="style5">nahajamo, lahko pa si tudi poiščete pot do nas preko našega interaktivnega zemljevida.</span><br />
-    <br />
-    <span class="style5">Želimo vam čim bolj prijetno brskanje po naših straneh in  dobro poslovno sodelovanje v prihodnosti.</span></td>
+      
+      
+      
+      
+    </td>
   </tr>
   <tr>
     <td colspan="2" class="style1"><div align="center">&nbsp;</div></td>
