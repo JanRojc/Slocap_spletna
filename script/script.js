@@ -6,9 +6,12 @@ var height;
 //scroll enable: galerija, proizvodi, kontakt
 //scroll disable: podjetje
 
+window.onresize = function () {
+  document.getElementById("test").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
+  document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
+}
+
 functionDoma();
-//TweenMax.to("#divId", 1.3, {height:600, ease: Expo.easeOut});
-//TweenMax.to("#divId", .7, {height:1607, ease: Expo.easeIn});
 
 function prikaziDropdown1() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
@@ -79,6 +82,7 @@ function functionDoma() {
 
 
 function functionPodjetje() {
+  swipe("dropdownId8");
   height = 600;
   document.getElementById("bodyId").style.overflow = "hidden";
   TweenMax.to("#divId", .6, {height:600, ease: Expo.easeOut});
@@ -292,7 +296,7 @@ function functionKontakt() {
     TweenMax.from(".kontaktId1", .5, {scale:.9, opacity:0, y:300, delay:.4, ease: Expo.easeOut});
     TweenMax.from(".kontaktId2", .5, {opacity:0, y:300, delay:.6, ease: Expo.easeOut});
     TweenMax.from(".kontaktId3", .5, {opacity:0, y:300, delay:.8, ease: Expo.easeOut});
-  }, 600);
+  }, 150);
 }
 
 
@@ -386,9 +390,9 @@ function animacijaOut() {
       TweenMax.to(".slika3", .3, {scale:.9, opacity:0, y:-100, delay:.3});
       break;
     case 4:
-      TweenMax.to(".proizvodiId1", .3, {opacity:0, y:-300, delay:0, ease: Expo.easeIn});
-      TweenMax.to(".proizvodiId2", .3, {opacity:0, y:-300, delay:.1, ease: Expo.easeIn});
-      TweenMax.to(".proizvodiId3", .3, {opacity:0, y:-300, delay:.2, ease: Expo.easeIn});
+      TweenMax.to(".proizvodiId1", .3, {opacity:0, ease: Expo.easeOut});
+      TweenMax.to(".proizvodiId2", .3, {opacity:0, delay:.05, ease: Expo.easeOut});
+      TweenMax.to(".proizvodiId3", .3, {opacity:0, delay:.1, ease: Expo.easeOut});
       break;
     case 5:
       TweenMax.to(".pvcId1", .3, {scale:.9, opacity:0, y:-100, delay:0, ease: Expo.easeIn});

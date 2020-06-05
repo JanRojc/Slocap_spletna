@@ -11,12 +11,26 @@
 <style type="text/css">
 
 body {
-	background-color: #000000;
+  background-color:#999999;
+	background-image: url(images/background_logo.png);
+	width:50%;
 	/*overflow: hidden;*/
 }
 
-body::-webkit-scrollbar {
-  display:none;
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+}
+
+#test {
+  background-color:#999999;
+  background-image: url(images/top_background.png);
+  background-repeat:no-repeat;
+  width:818px;
+  flex: 1 1 auto;
 }
 
 .button {
@@ -149,9 +163,14 @@ a:active {
 </head>
 
 <body id="bodyId">
-<table width="681" border="0" align="center" cellpadding="0" cellspacing="0">
+    <div id="test">
+      <script>
+        document.getElementById("test").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
+        document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
+      </script>
+<table width="818" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td colspan="2"><div align="right"><span class="style1">
+    <td colspan="2" style="padding-top:10px; padding-right:30px"><div align="right"><span class="style1">
 <a href="index.html" target="_self">Slovenščina</a>&nbsp;&nbsp;&nbsp;
 <a href="ger/index.html" target="_self">Deutsch</a>&nbsp;&nbsp;&nbsp;
 <a href="cro/index.html" target="_self">Hrvatski</a>&nbsp;&nbsp;&nbsp;
@@ -161,7 +180,7 @@ a:active {
 </span></div></td>
   </tr>
   <tr>
-    <td colspan="2"><a href="index.html"><img src="images/logo.jpg" alt="SLOCAP d.o.o. Sežana" width="818" height="155" border="0" /></a></td>
+    <td colspan="2"><a href="index.html"><img src="images/logo.png" alt="SLOCAP d.o.o. Sežana" width="818" height="155" border="0" /></a></td>
   </tr>
   <tr>
     <td colspan="2">&nbsp;</td>
@@ -194,5 +213,6 @@ a:active {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/ScrollTrigger.min.js"></script>
 <script src="script/script.js"></script>
+</div>
 </body>
 </html>
