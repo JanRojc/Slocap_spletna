@@ -6,12 +6,29 @@ var height;
 //scroll enable: galerija, proizvodi, kontakt
 //scroll disable: podjetje
 
+functionDoma();
+
+
+
+
+
+function pdfAnimacija1() {
+  gsap.to("#pdf1", .2, {y:-5, rotateY:"+=360",opacity:.2});
+  gsap.to("#pdf1", .2, {y:5, opacity:1, delay:.2});
+}
+function pdfAnimacija2() {
+  TweenMax.to("#pdf2", .2, {y:-5, opacity:.2});
+  TweenMax.to("#pdf2", .2, {y:5, opacity:1, delay:.2});
+}
+function pdfAnimacija3() {
+  TweenMax.to("#pdf3", .2, {y:-5, opacity:.2});
+  TweenMax.to("#pdf3", .2, {y:5, opacity:1, delay:.2});
+}
+
 window.onresize = function () {
   document.getElementById("test").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
   document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
 }
-
-functionDoma();
 
 function prikaziDropdown1() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
@@ -82,13 +99,11 @@ function functionDoma() {
 
 
 function functionPodjetje() {
-  swipe("dropdownId8");
   height = 600;
   document.getElementById("bodyId").style.overflow = "hidden";
   TweenMax.to("#divId", .6, {height:600, ease: Expo.easeOut});
   izkljuciDropdown(false, true, 2);
   animacijaOut();
-  
   //prikazi podjetje
   setTimeout(function(){
     document.getElementById("mainPlaceholder").innerHTML = '<img src="images/podjetje_slocap_b2.jpg" width="588" height="267" border="0" class="rounded_top rounded_bot podjetjeId1"/><br /> \
@@ -145,10 +160,10 @@ function functionGalerija() {
     gsap.from(".slika3", {
       scrollTrigger: {
           trigger: ".slika3",
-          start: "0px bottom",
+          start: "-50px bottom",
           toggleActions: "restart none none restart",
-          end: "-200px bottom",
-          scrub: .5
+          end: "200px bottom",
+          scrub: true
       },
       y: 100,
       opacity: 0,
@@ -162,9 +177,10 @@ function functionGalerija() {
 
 function functionProizvodi() {
   height = 767.5;
-  TweenMax.to("#divId", .3, {height:767.5, ease: Expo.easeIn});
-  //setTimeout(function(){
-  izkljuciDropdown(true, false, 4);
+  TweenMax.to("#divId", .3, {height:767.5});
+  setTimeout(function(){
+    izkljuciDropdown(true, false, 4);
+  },100);
   animacijaOut();
   
   //prikazi proizvode
@@ -203,7 +219,7 @@ function functionPVC() {
       <span style="display:inline-block" class="pvcId3 style5">perforacija</span><br /> \
       <span style="display:inline-block" class="pvcId3 style5">Barve: telo v dveh barvah + 1 x topli tisk</span><br /> \
       <span style="display:inline-block" class="pvcId3 style5">Barve pokrovčka: v dveh barvah + relief - logo<br /><br /> \
-      <a href="images/slocap_kapice.pdf" target="_blank" class="pvcId4"><img src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" /></a></span>';
+      <a href="images/slocap_kapice.pdf" target="_blank" class="pvcId4"><img onmouseover="pdfAnimacija1()" src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf1"/></a></span>';
     stanje = 5;
       
     //main animacija
@@ -235,7 +251,7 @@ function functionPolilaminat() {
       <span style="display:inline-block" class="polilaminatId3 style5">podaljšana okrogla ovratnica na eni strani.</span><br /> \
       <span style="display:inline-block" class="polilaminatId3 style5">Barve telesa: v dveh barvah + 2 x topli tisk</span><br /> \
       <span style="display:inline-block" class="polilaminatId3 style5">Barva pokrovčka: v dveh barvah + 1 x topli tisk<br /><br /> \
-      <a href="images/slocap_kapsuloni.pdf" target="_blank" class="polilaminatId4"><img src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" /></a></span>';
+      <a href="images/slocap_kapsuloni.pdf" target="_blank" class="polilaminatId4"><img onmouseover="pdfAnimacija2()" src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf2"/></a></span>';
     stanje = 6;
     
     //main animacija
@@ -261,7 +277,7 @@ function functionAluminij() {
       <span style="display:inline-block" class="aluminijId3 style5">Material: PVC</span><br /> \
       <span style="display:inline-block" class="aluminijId3 style5">Dimenzije: 63mm</span><br /> \
       <span style="display:inline-block" class="aluminijId3 style5">Barve: v eni barvi<br /><br /> \
-      <a href="images/slocap_kalote.pdf" target="_blank" class="aluminijId4"><img src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" /></a></span>';
+      <a href="images/slocap_kalote.pdf" target="_blank" class="aluminijId4"><img onmouseover="pdfAnimacija3()" src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf3"/></a></span>';
     stanje = 7;
     
     //main animacija
@@ -296,7 +312,7 @@ function functionKontakt() {
     TweenMax.from(".kontaktId1", .5, {scale:.9, opacity:0, y:300, delay:.4, ease: Expo.easeOut});
     TweenMax.from(".kontaktId2", .5, {opacity:0, y:300, delay:.6, ease: Expo.easeOut});
     TweenMax.from(".kontaktId3", .5, {opacity:0, y:300, delay:.8, ease: Expo.easeOut});
-  }, 150);
+  }, 600);
 }
 
 
@@ -326,8 +342,8 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
     TweenMax.to("#dropdownId6", .3, {y:-48, delay:.15, ease: Expo.easeOut});
     if (!prvi) {
       setTimeout(function(){
-        animacijaDropdown(1)}
-        ,400);
+        animacijaDropdown(1)
+      }, 400);
     } else {
       setTimeout(function(){
         prikaziDropdown1()}
@@ -362,9 +378,11 @@ function animacijaDropdown (index) {
   }
 }
 
-function swipe(id) {
-  TweenMax.to("#" + id, 1, {'backgroundPosition': -200});
-}
+// function swipe(id) {
+
+//   TweenMax.to("#" + id, .5, {'backgroundPosition': -200});
+//   document.getElementById(id).style.backgroundPosition = 0;
+// }
 
 function animacijaOut() {
   //trajanje animacije: 0.5-0.6s
@@ -390,9 +408,9 @@ function animacijaOut() {
       TweenMax.to(".slika3", .3, {scale:.9, opacity:0, y:-100, delay:.3});
       break;
     case 4:
-      TweenMax.to(".proizvodiId1", .3, {opacity:0, ease: Expo.easeOut});
-      TweenMax.to(".proizvodiId2", .3, {opacity:0, delay:.05, ease: Expo.easeOut});
-      TweenMax.to(".proizvodiId3", .3, {opacity:0, delay:.1, ease: Expo.easeOut});
+      TweenMax.to(".proizvodiId1", .3, {opacity:0, y:-300, delay:0, ease: Expo.easeIn});
+      TweenMax.to(".proizvodiId2", .3, {opacity:0, y:-300, delay:.1, ease: Expo.easeIn});
+      TweenMax.to(".proizvodiId3", .3, {opacity:0, y:-300, delay:.2, ease: Expo.easeIn});
       break;
     case 5:
       TweenMax.to(".pvcId1", .3, {scale:.9, opacity:0, y:-100, delay:0, ease: Expo.easeIn});

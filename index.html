@@ -10,6 +10,17 @@
 
 <style type="text/css">
 
+
+
+button::-moz-focus-inner {
+  border: 0;
+}
+img::-moz-focus-inner {
+  border: 0;
+}
+
+
+
 body {
   background-color:#999999;
 	background-image: url(images/background_logo.png);
@@ -88,9 +99,9 @@ body {
   padding-top: 15px;
 }
 
-#dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4, #dropdownId5, #dropdownId6, #dropdownId7, #dropdownId8 {
-  background-image: url("images/swipe.png");
-}
+/*#dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4, #dropdownId5, #dropdownId6, #dropdownId7, #dropdownId8 {*/
+/*  background-image: url("images/swipe.png");*/
+/*}*/
 
 .style1 {
 	color: #FFFFFF;
@@ -158,6 +169,10 @@ a:active {
 	font-size: 14px;
 }
 
+.optimizacija {
+  color:#999999;
+}
+
 </style>
 <link href="css/default.css" rel="stylesheet" type="text/css" />
 </head>
@@ -180,7 +195,7 @@ a:active {
 </span></div></td>
   </tr>
   <tr>
-    <td colspan="2"><a href="index.html"><img src="images/logo.png" alt="SLOCAP d.o.o. Sežana" width="818" height="155" border="0" /></a></td>
+    <td colspan="2"><a href="index.html"><img src="images/logo_left.png" alt="SLOCAP d.o.o. Sežana" border="0" style="margin-left:20px"/></a><img src="images/logo_right.png" alt="SLOCAP d.o.o. Sežana" border="0" /></td>
   </tr>
   <tr>
     <td colspan="2">&nbsp;</td>
@@ -188,7 +203,7 @@ a:active {
   <tr>
     <td id="dropdownPlaceholder" align="left" valign="top"  style="width: 216px; height:600px;">
      <div id="divId" style="width: 216px; height:600px; background-color:#333333" class="rounded_top rounded_bot paddingTop position">
-      <div id="dropdownId7" class="lul"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div>
+      <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div>
       <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div>
       <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div>
       <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div>
@@ -198,7 +213,7 @@ a:active {
     	</div>
     </div>
     </td>
-    <td id="mainPlaceholder" align="left" valign="top" style="width:588" class="style5 paddingTop">
+    <td id="mainPlaceholder" align="left" valign="top" style="width:588; perspective:100px" class="style5 paddingTop">
       
       
       
