@@ -68,6 +68,7 @@ body {
   border: none;
   background: none;
   cursor:pointer;
+  padding-left: 14px;
 	line-height: 16px;
 }
 
@@ -103,9 +104,9 @@ body {
   padding-left: 14px;
 }
 
-/*#dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4, #dropdownId5, #dropdownId6, #dropdownId7, #dropdownId8 {*/
-/*  background-image: url("images/swipe.png");*/
-/*}*/
+#dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4, #dropdownId5, #dropdownId6, #dropdownId7, #dropdownId8 {
+  background-image: url("images/swipe.png");
+}
 
 .style1 {
 	color: #FFFFFF;
@@ -237,6 +238,29 @@ a:active {
   pointer-events: none;
 }
 
+#layer11 {
+  background-color:#333333;
+  width: 216px;
+  height: 600px;
+  position:absolute;
+  z-index:1;
+  pointer-events: auto;
+}
+
+#layer12 {
+  position:absolute;
+  z-index:3;
+  pointer-events: none;
+  /*padding-top:63px;*/
+}
+
+#layer13 {
+  position:absolute;
+  z-index:2;
+  pointer-events: auto;
+  /*padding-top:87px;*/
+}
+
 .optimizacija {
   color:#999999;
 }
@@ -270,16 +294,35 @@ a:active {
   </tr>
   <tr>
     <td id="dropdownPlaceholder" align="left" valign="top"  style="width: 216px; height:600px;">
-     <div id="divId" style="width: 216px; height:600px; background-color:#333333" class="rounded_top rounded_bot paddingTop position">
-      <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div>
-      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div>
-      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div>
-      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div>
-      <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br />
-
-
-    	</div>
+      
+      
+      
+     <div id="divId">
+       <div id="layer11" class="rounded_top rounded_bot paddingTop">
+        <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div>
+        <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div>
+        <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div>
+        <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div>
+        <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/></div>
+        <div id="layer13" style="margin-top:100px">
+          <div id="dropdownId2"><button target="_self" class="button2" onclick="functionPVC()">- Kapice PVC</button></div>
+          <div id="dropdownId3"><button target="_self" class="button2" onclick="functionPolilaminat()">- Kapice polilaminat za steklenice penin</button></div>
+          <div id="dropdownId4"><button target="_self" class="button2" onclick="functionAluminij()">- Kapice Aluminij za sodčke</button></div>
+        </div>
+      </div>
+      <div id="layer12">
+        <div id="dropdownId1" style="width:216px"><button target="_self" class="button2" onclick="functionGalerija()">- galerija</button></div>
+      </div>
+      
     </div>
+    <script>
+      TweenMax.to("#dropdownId1", 0, {opacity:0});
+      TweenMax.to("#dropdownId2", 0, {opacity:0});
+      TweenMax.to("#dropdownId3", 0, {opacity:0});
+      TweenMax.to("#dropdownId4", 0, {opacity:0});
+    </script>
+    
+    
     </td>
     <td id="mainPlaceholder" align="left" valign="top" style="width:588">
       <div id="layer1">
@@ -298,12 +341,12 @@ a:active {
         <span style="display:inline-block" class="paddingTop podjetjeId5">Za zagotavljanje visoke kvalitete svojih proizvodov podjetje uporablja samo materiale priznanih svetovnih proizvajalcev. Kupce proizvodov Slocap najdemo po vsej Evropi in po državah bivše Jugoslavije.</span>
       </div>
       <div id="layer3" class="paddingLeft">
-        <img id="slika1" src="images/podjetje01.jpg" width="100%" height="140" class="rounded_top" /><br /><br /> 
-        <img id="slika2" src="images/podjetje02.jpg" width="100%" height="140" /><br /><br /> 
-        <img id="slika3" src="images/podjetje03.jpg" width="100%" height="140" /><br /><br /> 
-        <img id="slika4" src="images/podjetje04.jpg" width="100%" height="140" class="rounded_bot"/>
+        <img id="slika1" src="images/podjetje01.jpg" width="588" height="1" class="rounded_top" /><br /><br /> 
+        <img id="slika2" src="images/podjetje02.jpg" width="588" height="1" /><br /><br /> 
+        <img id="slika3" src="images/podjetje03.jpg" width="588" height="1" /><br /><br /> 
+        <img id="slika4" src="images/podjetje04.jpg" width="588" height="1" class="rounded_bot"/>
       </div>
-      <div id="layer4" class="style5">
+      <div id="layer4">
         <span><button target="_self" class="proizvodiId1 button paddingTop" onclick="functionPVC()">Kapice PVC</button></span><br /><br /> 
         <button target="_self" class="button3" onclick="functionPVC()"><img id="proizvodiSlika1" src="images/slocap_kapice.jpg" alt="Kapice PVC" border="0" height="1" class="rounded_top rounded_bot"/></button><br /><br /> 
         <span><button target="_self" class="button proizvodiId2" onclick="functionPolilaminat()">Kapice polilaminat za steklenice penin</button></span><br /><br /> 
@@ -360,8 +403,6 @@ a:active {
         Fax.: +386(0)5 730 48 91<br /> 
         E-mail: <a href="mailto:info@slocap.si" target="_blank">info@slocap.si</a><br /></div>
       </div>
-      
-      
     </td>
   </tr>
   <tr>
@@ -369,10 +410,10 @@ a:active {
   </tr>
 </table>
 <div class="optimizacija">Slocap d.o.o. Sežana. Proizvajalec PVC kapic, Kapice polilaminat za steklenice penin, Kapice Aluminij za sodčke</div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollToPlugin.min.js"></script>
 <script src="script/script.js"></script>
-</div>
 </body>
 </html>
