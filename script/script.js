@@ -9,7 +9,7 @@ var animationComplete = true;
 functionDoma();
 
 window.onresize = function () {
-  document.getElementById("mainDiv").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
+  document.getElementById("mainDiv").style['padding-left'] = window.innerWidth / 2 - 409 + "px";
   document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
 };
 
