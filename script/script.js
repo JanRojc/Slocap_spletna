@@ -2,7 +2,6 @@ var boolPodjetje = false;
 var boolProizvodi = false;
 var stanje = 0;
 var animationComplete = true;
-var pdfAnimationComplete = true;
 // Doma-1, Podjetje-2, Galerija-3, Proizvodi-4, PVC-5, Polialuminat-6, Aluminij-7, Kontakt-8
 //scroll enable: galerija, proizvodi, kontakt
 //scroll disable: podjetje
@@ -14,33 +13,23 @@ window.onresize = function () {
   document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
 };
 
-var t1 = new TimelineMax({onReverseComplete:pdfAnimationCompleteTrue, paused:true});
+var t1 = new TimelineMax({paused:true});
 t1.fromTo("#pdf1", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
 t1.fromTo("#pdfDownload1", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
 
 
-var t2 = new TimelineMax({onReverseComplete:pdfAnimationCompleteTrue, paused:true});
+var t2 = new TimelineMax({paused:true});
 t2.fromTo("#pdf2", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
 t2.fromTo("#pdfDownload2", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
 
-var t3 = new TimelineMax({onReverseComplete:pdfAnimationCompleteTrue, paused:true});
+var t3 = new TimelineMax({paused:true});
 t3.fromTo("#pdf3", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
 t3.fromTo("#pdfDownload3", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
 
 
 
-function pdfAnimationCompleteTrue() {
-  pdfAnimationComplete = true;
-}
-
-
-
 function pdfAnimacija1() {
-  if (!pdfAnimationComplete) {
-    return;
-  }
-  pdfAnimationComplete = false;
-  t1.restart()
+  t1.play();
 }
 function pdfAnimacijaOut1() {
   t1.reverse();
@@ -48,11 +37,7 @@ function pdfAnimacijaOut1() {
 
 
 function pdfAnimacija2() {
-  if (!pdfAnimationComplete) {
-    return;
-  }
-  pdfAnimationComplete = false;
-  t2.restart()
+  t2.play();
 }
 function pdfAnimacijaOut2() {
   t2.reverse();
@@ -60,11 +45,7 @@ function pdfAnimacijaOut2() {
 
 
 function pdfAnimacija3() {
-  if (!pdfAnimationComplete) {
-    return;
-  }
-  pdfAnimationComplete = false;
-  t3.restart()
+  t3.play()
 }
 function pdfAnimacijaOut3() {
   t3.reverse();
