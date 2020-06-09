@@ -2,6 +2,7 @@ var boolPodjetje = false;
 var boolProizvodi = false;
 var stanje = 0;
 var animationComplete = true;
+var pdfAnimationComplete = true;
 // Doma-1, Podjetje-2, Galerija-3, Proizvodi-4, PVC-5, Polialuminat-6, Aluminij-7, Kontakt-8
 //scroll enable: galerija, proizvodi, kontakt
 //scroll disable: podjetje
@@ -13,22 +14,61 @@ window.onresize = function () {
   document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
 };
 
+var t1 = new TimelineMax({onReverseComplete:pdfAnimationCompleteTrue, paused:true});
+t1.fromTo("#pdf1", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
+t1.fromTo("#pdfDownload1", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
+
+
+var t2 = new TimelineMax({onReverseComplete:pdfAnimationCompleteTrue, paused:true});
+t2.fromTo("#pdf2", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
+t2.fromTo("#pdfDownload2", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
+
+var t3 = new TimelineMax({onReverseComplete:pdfAnimationCompleteTrue, paused:true});
+t3.fromTo("#pdf3", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
+t3.fromTo("#pdfDownload3", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
+
+
+
+function pdfAnimationCompleteTrue() {
+  pdfAnimationComplete = true;
+}
+
 
 
 function pdfAnimacija1() {
-  gsap.to("#pdf1", .2, {y:-5, rotateY:"+=360",opacity:.2});
-  gsap.to("#pdf1", .2, {y:5, opacity:1, delay:.2});
-  gsap.set("#pdf1", 0, {y:-5, rotateY:0,opacity:.2});
+  if (!pdfAnimationComplete) {
+    return;
+  }
+  pdfAnimationComplete = false;
+  t1.restart()
 }
-function pdfAnimacija2() {
-  TweenMax.to("#pdf2", .2, {y:-5, opacity:.2});
-  TweenMax.to("#pdf2", .2, {y:5, opacity:1, delay:.2});
-}
-function pdfAnimacija3() {
-  TweenMax.to("#pdf3", .2, {y:-5, opacity:.2});
-  TweenMax.to("#pdf3", .2, {y:5, opacity:1, delay:.2});
+function pdfAnimacijaOut1() {
+  t1.reverse();
 }
 
+
+function pdfAnimacija2() {
+  if (!pdfAnimationComplete) {
+    return;
+  }
+  pdfAnimationComplete = false;
+  t2.restart()
+}
+function pdfAnimacijaOut2() {
+  t2.reverse();
+}
+
+
+function pdfAnimacija3() {
+  if (!pdfAnimationComplete) {
+    return;
+  }
+  pdfAnimationComplete = false;
+  t3.restart()
+}
+function pdfAnimacijaOut3() {
+  t3.reverse();
+}
 
 
 
@@ -392,7 +432,6 @@ function animacijaDropdown (index) {
 function swipe(id) {
   TweenMax.to("#" + id, .5, {'backgroundPosition': 432});
   document.getElementById(id).style.backgroundPosition = 0;
-  console.log("1");
 }
 
 function animacijaOut() {

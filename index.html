@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=850, minimum-scale=0.0001">
+<meta name="viewport" content="width=850, initial-scale=0.5">
 <title>Slocap d.o.o. Sežana</title>
 <META NAME="keywords" CONTENT="Slocap d.o.o., Sežana, Proizvajalec, PVC, kapic, Kapice, polilaminat za steklenice penin, kapice Alumini za sodčke">
 <META NAME="description" CONTENT="Slocap d.o.o. Sežana. Proizvajalec PVC kapic, Kapice polilaminat za steklenice penin, Kapice Alumini za sodčke">
@@ -262,6 +262,36 @@ a:active {
   /*padding-top:87px;*/
 }
 
+#pdf1 {
+  position:absolute;
+  z-index:1;
+}
+
+#pdfDownload1 {
+  position:absolute;
+  z-index:2;
+}
+
+#pdf2 {
+  position:absolute;
+  z-index:3;
+}
+
+#pdfDownload2 {
+  position:absolute;
+  z-index:4;
+}
+
+#pdf3 {
+  position:absolute;
+  z-index:5;
+}
+
+#pdfDownload3 {
+  position:absolute;
+  z-index:6;
+}
+
 .optimizacija {
   color:#999999;
 }
@@ -365,7 +395,13 @@ a:active {
         <span style="display:inline-block" class="pvcId3 style5">perforacija</span><br /> 
         <span style="display:inline-block" class="pvcId3 style5">Barve: telo v dveh barvah + 1 x topli tisk</span><br /> 
         <span style="display:inline-block" class="pvcId3 style5">Barve pokrovčka: v dveh barvah + relief - logo<br /><br /> 
-        <a href="images/slocap_kapice.pdf" target="_blank" class="pvcId4"><img onmouseover="pdfAnimacija1()" src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf1"/></a></span>
+          <div class="pvcId4" style="width:80px; height:80px; perspective:200px" onmouseenter="pdfAnimacija1()" onmouseleave="pdfAnimacijaOut1()">
+            <a href="images/slocap_kapice.pdf" target="_blank">
+              <img src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf1"/>
+              <img src="images/pdf_download.png" alt="Prenesi" width="80" height="80" border="0" id="pdfDownload1"/>
+            </a>
+          </div>
+        </span>
       </div>
       <div id="layer6">
         <span style="display:inline-block" class="polilaminatId1 style8 paddingTop">Kapice polilaminat za steklenice penin</span><br /><br /> 
@@ -381,7 +417,13 @@ a:active {
         <span style="display:inline-block" class="polilaminatId3 style5">podaljšana okrogla ovratnica na eni strani.</span><br /> 
         <span style="display:inline-block" class="polilaminatId3 style5">Barve telesa: v dveh barvah + 2 x topli tisk</span><br /> 
         <span style="display:inline-block" class="polilaminatId3 style5">Barva pokrovčka: v dveh barvah + 1 x topli tisk<br /><br /> 
-        <a href="images/slocap_kapsuloni.pdf" target="_blank" class="polilaminatId4"><img onmouseover="pdfAnimacija2()" src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf2"/></a></span>
+          <div class="polilaminatId4" style="width:80px; height:80px; perspective:200px" onmouseenter="pdfAnimacija2()" onmouseleave="pdfAnimacijaOut2()">
+            <a href="images/slocap_kapsuloni.pdf" target="_blank">
+              <img src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf2"/>
+              <img src="images/pdf_download.png" alt="Prenesi" width="80" height="80" border="0" id="pdfDownload2"/>
+            </a>
+          </div>
+        </span>
       </div>
       <div id="layer7">
         <span style="display:inline-block" class="aluminijId1 style8 paddingTop">Kapice Aluminij za sodčke</span><br /><br /> 
@@ -391,7 +433,13 @@ a:active {
         <span style="display:inline-block" class="aluminijId3 style5">Material: PVC</span><br /> 
         <span style="display:inline-block" class="aluminijId3 style5">Dimenzije: 63mm</span><br /> 
         <span style="display:inline-block" class="aluminijId3 style5">Barve: v eni barvi<br /><br /> 
-        <a href="images/slocap_kalote.pdf" target="_blank" class="aluminijId4"><img onmouseover="pdfAnimacija3()" src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf3"/></a></span>
+          <div class="aluminijId4" style="width:80px; height:80px; perspective:200px" onmouseenter="pdfAnimacija3()" onmouseleave="pdfAnimacijaOut3()">
+            <a href="images/slocap_kalote.pdf" target="_blank">
+              <img src="images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf3"/>
+              <img src="images/pdf_download.png" alt="Prenesi" width="80" height="80" border="0" id="pdfDownload3"/>
+            </a>
+          </div>
+        </span>
       </div>
       <div id="layer8" class="style5">
         <img id="kontaktId1" src="images/podjetje_slocap_b.jpg" width="588" height="1" border="0" class="rounded_top rounded_bot" /><br /><br /> 
