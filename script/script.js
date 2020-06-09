@@ -6,13 +6,20 @@ var animationComplete = true;
 //scroll enable: galerija, proizvodi, kontakt
 //scroll disable: podjetje
 
+
+
+// Page loading ---------------------------------------------------------------------
+//    |||
+//    vvv
+
+
 functionDoma();
 
-window.onresize = function () {
-  document.getElementById("mainDiv").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
-  document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
-};
+// body positioning
+document.getElementById("mainDiv").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
+document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
 
+// pdf animation timelines
 var t1 = new TimelineMax({paused:true});
 t1.fromTo("#pdf1", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
 t1.fromTo("#pdfDownload1", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
@@ -26,7 +33,16 @@ var t3 = new TimelineMax({paused:true});
 t3.fromTo("#pdf3", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
 t3.fromTo("#pdfDownload3", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
 
+//    ^^^
+//    |||
+// Page loading ---------------------------------------------------------------------
 
+
+
+window.onresize = function () {
+  document.getElementById("mainDiv").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
+  document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
+};
 
 function pdfAnimacija1() {
   t1.play();
@@ -65,12 +81,12 @@ function functionDoma() {
   animacijaOut();
   var time;
   if (stanje == 0) {
-    TweenMax.to("#divId", .1, {height:600});
+    TweenMax.to("#dropdownDivId", .1, {height:600});
     TweenMax.to("#layer11", .1, {height:600});
     time = 0;
   } else {
     swipe("dropdownId7");
-    TweenMax.to("#divId", 1.3, {height:600});
+    TweenMax.to("#dropdownDivId", 1.3, {height:600});
     TweenMax.to("#layer11", .6, {height:600});
     time = 400;
   }
@@ -102,7 +118,7 @@ function functionPodjetje() {
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   document.getElementById("bodyId").style.overflow = "hidden";
-  TweenMax.to("#divId", 1, {height:600});
+  TweenMax.to("#dropdownDivId", 1, {height:600});
   TweenMax.to("#layer11", .3, {height:600});
   izkljuciDropdown(false, true, 2);
   animacijaOut();
@@ -119,7 +135,7 @@ function functionPodjetje() {
     TweenMax.fromTo(".podjetjeId4", {opacity:0, y:300}, {opacity:1, delay:.8, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".podjetjeId5", {opacity:0, y:300}, {opacity:1, delay:1, y:0, duration:.5, ease: Power3.easeOut});
     setTimeout(function(){
-      document.getElementById("bodyId").style.overflow = "auto";
+      document.getElementById("bodyId").style["overflow-y"] = "auto";
     }, 1500);
     
     animationComplete = true;
@@ -136,7 +152,7 @@ function functionGalerija() {
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   animacijaOut();
-  TweenMax.to("#divId", .7, {height:1569});
+  TweenMax.to("#dropdownDivId", .7, {height:1569});
   TweenMax.to("#layer11", .7, {height:1569});
   
   //prikazi galerijo
@@ -196,7 +212,7 @@ function functionProizvodi() {
   swipe("dropdownId5");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#divId", .3, {height:753});
+  TweenMax.to("#dropdownDivId", .3, {height:753});
   TweenMax.to("#layer11", .3, {height:753});
   setTimeout(function(){
     izkljuciDropdown(true, false, 4);
@@ -215,7 +231,7 @@ function functionProizvodi() {
     TweenMax.fromTo("#proizvodiSlika1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".proizvodiId2", {opacity:0, y:300}, {opacity:1, delay:.4, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".proizvodiId3", {opacity:0, y:300}, {opacity:1, delay:.6, y:0, duration:.5, ease: Power3.easeOut});
-    TweenMax.from("#divId", .5, {delay:.6, height:1053, ease: Power3.easeOut});
+    TweenMax.from("#dropdownDivId", .5, {delay:.6, height:1053, ease: Power3.easeOut});
 
     animationComplete = true;
 
@@ -231,7 +247,7 @@ function functionPVC() {
   swipe("dropdownId2");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#divId", 1, {height:600});
+  TweenMax.to("#dropdownDivId", 1, {height:600});
   TweenMax.to("#layer11", .6, {height:600});
   animacijaOut();
   
@@ -261,7 +277,7 @@ function functionPolilaminat() {
   swipe("dropdownId3");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#divId", 1, {height:600});
+  TweenMax.to("#dropdownDivId", 1, {height:600});
   TweenMax.to("#layer11", .6, {height:600});
   animacijaOut();
   
@@ -291,7 +307,7 @@ function functionAluminij() {
   swipe("dropdownId4");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#divId", 1, {height:600});
+  TweenMax.to("#dropdownDivId", 1, {height:600});
   TweenMax.to("#layer11", .6, {height:600});
   animacijaOut();
   
@@ -321,7 +337,7 @@ function functionKontakt() {
   swipe("dropdownId6");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#divId", .3, {height:842});
+  TweenMax.to("#dropdownDivId", .3, {height:842});
   TweenMax.to("#layer11", .3, {height:842});
   izkljuciDropdown(true, true, 8);
   animacijaOut();
@@ -337,7 +353,7 @@ function functionKontakt() {
     TweenMax.fromTo("#kontaktId1", {opacity:0, y:100, scale:.9}, {opacity:1, delay:0, y:0, duration:.5, scale:1, ease: Power3.easeOut});
     TweenMax.fromTo(".kontaktId2", {opacity:0, y:100}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".kontaktId3", {opacity:0, y:100}, {opacity:1, delay:.4, y:0, duration:.5, ease: Power3.easeOut});
-    TweenMax.from("#divId", .5, {delay:.4, height:942, ease: Power3.easeOut});
+    TweenMax.from("#dropdownDivId", .5, {delay:.4, height:942, ease: Power3.easeOut});
 
     animationComplete = true;
 

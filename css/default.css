@@ -1,0 +1,298 @@
+button::-moz-focus-inner {
+  border: 0;
+}
+img::-moz-focus-inner {
+  border: 0;
+}
+
+
+
+body {
+  overflow-x:hidden;
+  background-color:#999999;
+	background-image: url(../images/background_logo.png);
+	/*width:50%;*/
+	/*overflow: hidden;*/
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+}
+
+#mainDiv {
+  background-color:#999999;
+  background-image: url(../images/top_background.png);
+  background-repeat:no-repeat;
+  width:818px;
+  flex: 1 1 auto;
+}
+
+.button {
+  border: none;
+  background: none;
+  cursor:pointer;
+  color: #F8CF7F;
+	font-size: 14px;
+	padding-left: 14px;
+	line-height: 24px;
+}
+
+.button2 {
+  border: none;
+  background: none;
+  cursor:pointer;
+  color: #F8CF7F;
+	font-size: 11px;
+	padding-left: 23px;
+	line-height: 16px;
+}
+
+.button3 {
+  border: none;
+  background: none;
+  cursor:pointer;
+  padding-left: 14px;
+	line-height: 16px;
+}
+
+.button:hover, .button2:hover {
+	text-decoration: underline;
+}
+
+.position {
+  position:relative;
+}
+
+.positionSlikaSide {
+  position:absolute;
+  left:27px;
+  top:170px;
+}
+
+.rounded_top {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.rounded_bot {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.paddingTop {
+  padding-top: 15px;
+}
+
+.paddingLeft{
+  padding-left: 14px;
+}
+
+#dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4, #dropdownId5, #dropdownId6, #dropdownId7, #dropdownId8 {
+  background-image: url("../images/swipe.png");
+}
+
+#dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4 {
+  opacity: 0;
+}
+
+.style1 {
+	color: #FFFFFF;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+
+a:link {
+	color: #F8CF7F;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #F8CF7F;
+}
+a:hover {
+	text-decoration: underline;
+	color: #F8CF7F;
+}
+a:active {
+	text-decoration: none;
+	color: #F8CF7F;
+}
+.style5 {
+  color: #FFFFFF;
+  font-family: Tahoma;
+  font-size: 12px;
+  padding-left: 14px;
+  padding-top: 0px;
+  line-height: 20px;
+}
+
+.style7 {
+	color: #FFFFFF;
+	padding-left: 14px;
+	font-family: Tahoma;
+	font-size: 14px;
+}
+.style8 {
+	color: #F8CF7F;
+	font-family: Tahoma;
+	font-size: 14px;
+	padding-left: 14px;
+}
+.style9 {
+	color: #F8CF7F;
+	font-family: Tahoma;
+	font-size: 14px;
+}
+
+#layer1 {
+  position:absolute;
+  opacity: 0;
+  z-index:1;
+  pointer-events: none;
+}
+
+#layer2 {
+  position:absolute;
+  opacity: 0;
+  z-index:2;
+  max-width:588px;
+  pointer-events: none;
+}
+
+#layer3 {
+  position:absolute;
+  opacity: 0;
+  z-index:3;
+  pointer-events: none;
+}
+
+#layer4 {
+  position:absolute;
+  opacity: 0;
+  z-index:4;
+  pointer-events: none;
+}
+
+#layer5 {
+  position:absolute;
+  opacity: 0;
+  z-index:5;
+  pointer-events: none;
+}
+
+#layer6 {
+  position:absolute;
+  opacity: 0;
+  z-index:6;
+  pointer-events: none;
+}
+
+#layer7 {
+  position:absolute;
+  opacity: 0;
+  z-index:7;
+  pointer-events: none;
+}
+
+#layer8 {
+  position:absolute;
+  opacity: 0;
+  z-index:8;
+  pointer-events: none;
+}
+
+#layer11 {
+  background-color:#333333;
+  width: 230px;
+  height: 600px;
+  position:absolute;
+  z-index:1;
+  pointer-events: auto;
+}
+
+#layer12 {
+  position:absolute;
+  z-index:3;
+  pointer-events: none;
+  /*padding-top:63px;*/
+}
+
+#layer13 {
+  position:absolute;
+  z-index:2;
+  pointer-events: auto;
+  /*padding-top:87px;*/
+}
+
+#pdf1 {
+  position:absolute;
+  z-index:1;
+}
+
+#pdfDownload1 {
+  position:absolute;
+  z-index:2;
+}
+
+#pdf2 {
+  position:absolute;
+  z-index:3;
+}
+
+#pdfDownload2 {
+  position:absolute;
+  z-index:4;
+}
+
+#pdf3 {
+  position:absolute;
+  z-index:5;
+}
+
+#pdfDownload3 {
+  position:absolute;
+  z-index:6;
+}
+
+#bodyId {
+	position: absolute;
+	z-index: 1;
+}
+
+#loadingScreen {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.drawLogo {
+  stroke-dasharray: 1900;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: 3;
+  width:50%;
+  padding-left:25%;
+  padding-top:10%;
+}
+
+
+.drawColor {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    width:50%;
+    padding-left:25%;
+    padding-top:10%;
+}
+
+.optimizacija {
+  color:#999999;
+}
