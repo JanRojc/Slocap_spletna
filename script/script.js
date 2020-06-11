@@ -367,7 +367,7 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
     document.getElementById("layer12").style["pointer-events"] = "none";
     boolPodjetje = false;
     TweenMax.to("#arrowhead1", .3, {rotate:0, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId1", 1, {opacity:0, y:39, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId1", 1, {opacity:0, y:38, ease: Power3.easeOut});
     TweenMax.to("#dropdownId6", .3, {y:0, delay:.1, ease: Power3.easeOut});
     TweenMax.to("#dropdownId5", .3, {y:0, delay:.1, ease: Power3.easeOut});
     if (!drugi) {
@@ -380,9 +380,9 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
     document.getElementById("layer13").style["pointer-events"] = "none";
     boolProizvodi = false;
     TweenMax.to("#arrowhead2", .3, {rotate:0, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId2", 1, {y:-180, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId3", 1, {y:-180, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId4", 1, {y:-180, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId2", 1, {y:20, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId3", 1, {y:20, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId4", 1, {y:20, ease: Power3.easeOut});
     TweenMax.to("#dropdownId2", .1, {opacity:0, delay:0});
     TweenMax.to("#dropdownId3", .1, {opacity:0, delay:.1});
     TweenMax.to("#dropdownId4", .1, {opacity:0, delay:.2});
@@ -407,19 +407,19 @@ function animacijaDropdown (index) {
     boolPodjetje = true;
     
     TweenMax.to("#arrowhead1", .3, {rotate:90, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId6", .3, {y:16, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId5", .3, {y:16, ease: Power3.easeOut});
-    TweenMax.fromTo("#dropdownId1", {opacity:0, y:39}, {opacity:1, y:63, duration:.5, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId5", .3, {y:18, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId6", .3, {y:18, ease: Power3.easeOut});
+    TweenMax.fromTo("#dropdownId1", {opacity:1, y:38}, {opacity:1, y:61, duration:.5, ease: Power3.easeOut});
     
   } else if (index == 2 && !boolProizvodi) {
     document.getElementById("layer13").style["pointer-events"] = "auto";
     boolProizvodi = true;
     
     TweenMax.to("#arrowhead2", .3, {rotate:90, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId6", .3, {y:48, ease: Power3.easeOut});
-    TweenMax.fromTo("#dropdownId2", {y:-180}, {y:-124, duration:.7, ease: Power3.easeOut});
-    TweenMax.fromTo("#dropdownId3", {y:-180}, {y:-124, duration:.7, ease: Power3.easeOut});
-    TweenMax.fromTo("#dropdownId4", {y:-180}, {y:-124, duration:.7, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId6", .3, {y:54, ease: Power3.easeOut});
+    TweenMax.fromTo("#dropdownId2", {y:20}, {y:85, duration:.7, ease: Power3.easeOut});
+    TweenMax.fromTo("#dropdownId3", {y:20}, {y:85, duration:.7, ease: Power3.easeOut});
+    TweenMax.fromTo("#dropdownId4", {y:20}, {y:85, duration:.7, ease: Power3.easeOut});
     TweenMax.to("#dropdownId2", {opacity:1, duration:.2, delay:.2});
     TweenMax.to("#dropdownId3", {opacity:1, duration:.2, delay:.1});
     TweenMax.to("#dropdownId4", {opacity:1, duration:.2, delay:0});

@@ -1,10 +1,12 @@
-button::-moz-focus-inner {
-  border: 0;
-}
+/*button::-moz-focus-inner {*/
+/*  border: 0;*/
+/*}*/
 img::-moz-focus-inner {
   border: 0;
 }
-
+button:focus {
+  outline: none;
+}
 
 
 body {
@@ -218,14 +220,14 @@ a:active {
   position:absolute;
   z-index:3;
   pointer-events: none;
-  /*padding-top:63px;*/
+  height:15px;
 }
 
 #layer13 {
   position:absolute;
   z-index:2;
-  pointer-events: auto;
-  /*padding-top:87px;*/
+  pointer-events: none;
+  height:15px;
 }
 
 #pdf1 {
@@ -280,7 +282,7 @@ a:active {
   z-index: 3;
   width:50%;
   padding-left:25%;
-  padding-top:10%;
+  padding-top:12%;
 }
 
 
@@ -290,7 +292,7 @@ a:active {
     z-index: 1;
     width:50%;
     padding-left:25%;
-    padding-top:10%;
+    padding-top:12%;
 }
 
 .optimizacija {
