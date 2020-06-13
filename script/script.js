@@ -68,8 +68,6 @@ function pdfAnimacijaOut3() {
 }
 
 
-
-
 function functionDoma() {
   if (stanje == 1 || !animationComplete) {
     errorAnimation("dropdownId7");
@@ -337,8 +335,8 @@ function functionKontakt() {
   swipe("dropdownId6");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#dropdownDivId", .3, {height:842});
-  TweenMax.to("#layer11", .3, {height:842});
+  TweenMax.to("#dropdownDivId", .3, {height:853});
+  TweenMax.to("#layer11", .3, {height:853});
   izkljuciDropdown(true, true, 8);
   animacijaOut();
   

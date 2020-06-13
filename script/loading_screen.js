@@ -15,4 +15,4 @@ TweenMax.to("#loadingScreen", 1, {opacity:0, delay:4});
 setTimeout(function () {
   document.getElementById("loadingScreen").style['pointer-events'] = "none";
   document.getElementById("bodyId").style["overflow-y"] = "auto";
-}, 7500);
+}, 5000);
