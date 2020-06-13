@@ -1,6 +1,6 @@
-/*button::-moz-focus-inner {*/
-/*  border: 0;*/
-/*}*/
+button::-moz-focus-inner {
+  border: 0;
+}
 img::-moz-focus-inner {
   border: 0;
 }
@@ -93,10 +93,6 @@ body {
 
 #dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4, #dropdownId5, #dropdownId6, #dropdownId7, #dropdownId8 {
   background-image: url("../images/swipe.png");
-}
-
-#dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4 {
-  opacity: 0;
 }
 
 .style1 {
@@ -203,29 +199,6 @@ a:active {
   opacity: 0;
   z-index:8;
   pointer-events: none;
-}
-
-#layer11 {
-  background-color:#333333;
-  width: 230px;
-  height: 600px;
-  position:absolute;
-  z-index:1;
-  pointer-events: auto;
-}
-
-#layer12 {
-  position:absolute;
-  z-index:3;
-  pointer-events: none;
-  height:15px;
-}
-
-#layer13 {
-  position:absolute;
-  z-index:2;
-  pointer-events: none;
-  height:15px;
 }
 
 #pdf1 {

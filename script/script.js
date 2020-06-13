@@ -2,6 +2,7 @@ var boolPodjetje = false;
 var boolProizvodi = false;
 var stanje = 0;
 var animationComplete = true;
+var height = 600;
 // Doma-1, Podjetje-2, Galerija-3, Proizvodi-4, PVC-5, Polialuminat-6, Aluminij-7, Kontakt-8
 //scroll enable: galerija, proizvodi, kontakt
 //scroll disable: podjetje
@@ -67,25 +68,59 @@ function pdfAnimacijaOut3() {
   t3.reverse();
 }
 
+function prikaziDropdown1() {
+  document.getElementById("dropdownPlaceholder").innerHTML = '\
+      <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
+      <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div> \
+      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div> \
+      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div> \
+      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div> \
+      <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
+}
+
+
+function prikaziDropdown2() {
+  document.getElementById("dropdownPlaceholder").innerHTML = '\
+      <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
+      <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div> \
+      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div> \
+      <div id="dropdownId1"><button target="_self" class="button2" onclick="functionGalerija()">- galerija</button></div> \
+      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div> \
+      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div> \
+      <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
+}
+
+function prikaziDropdown3() {
+  document.getElementById("dropdownPlaceholder").innerHTML = '\
+    <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
+    <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div> \
+    <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div> \
+    <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div> \
+    <div id="dropdownId2"><button target="_self" class="button2" onclick="functionPVC()">- Kapice PVC</button></div> \
+    <div id="dropdownId3"><button target="_self" class="button2" onclick="functionPolilaminat()">- Kapice polilaminat za steklenice penin</button></div> \
+		<div id="dropdownId4"><button target="_self" class="button2" onclick="functionAluminij()">- Kapice Aluminij za sodčke</button></div> \
+    <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div> \
+    <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
+}
+
 
 function functionDoma() {
   if (stanje == 1 || !animationComplete) {
     errorAnimation("dropdownId7");
     return;
   }
+  height = 600;
   animationComplete = false;
   TweenMax.to(window, .27, {scrollTo:{y:0}});
   izkljuciDropdown(true, true, 1);
   animacijaOut();
   var time;
   if (stanje == 0) {
-    TweenMax.to("#dropdownDivId", .1, {height:600});
-    TweenMax.to("#layer11", .1, {height:600});
+    TweenMax.to("#dropdownPlaceholder", .1, {height:600});
     time = 0;
   } else {
     swipe("dropdownId7");
-    TweenMax.to("#dropdownDivId", 1.3, {height:600});
-    TweenMax.to("#layer11", .6, {height:600});
+    TweenMax.to("#dropdownPlaceholder", 1.3, {height:600});
     time = 400;
   }
   
@@ -112,12 +147,13 @@ function functionPodjetje() {
     errorAnimation("dropdownId8");
     return;
   }
+  height = 600;
   swipe("dropdownId8");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   document.getElementById("bodyId").style.overflow = "hidden";
-  TweenMax.to("#dropdownDivId", 1, {height:600});
-  TweenMax.to("#layer11", .3, {height:600});
+  TweenMax.to("#dropdownPlaceholder", 1, {height:600});
+
   izkljuciDropdown(false, true, 2);
   animacijaOut();
   //prikazi podjetje
@@ -146,12 +182,13 @@ function functionGalerija() {
     errorAnimation("dropdownId1");
     return;
   }
+  height = 1569;
   swipe("dropdownId1");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   animacijaOut();
-  TweenMax.to("#dropdownDivId", .7, {height:1569});
-  TweenMax.to("#layer11", .7, {height:1569});
+  TweenMax.to("#dropdownPlaceholder", .7, {height:1594});
+
   
   //prikazi galerijo
   setTimeout(function(){
@@ -210,8 +247,8 @@ function functionProizvodi() {
   swipe("dropdownId5");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#dropdownDivId", .3, {height:753});
-  TweenMax.to("#layer11", .3, {height:753});
+  TweenMax.to("#dropdownPlaceholder", .3, {height:776});
+  
   setTimeout(function(){
     izkljuciDropdown(true, false, 4);
   },100);
@@ -229,7 +266,7 @@ function functionProizvodi() {
     TweenMax.fromTo("#proizvodiSlika1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".proizvodiId2", {opacity:0, y:300}, {opacity:1, delay:.4, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".proizvodiId3", {opacity:0, y:300}, {opacity:1, delay:.6, y:0, duration:.5, ease: Power3.easeOut});
-    TweenMax.from("#dropdownDivId", .5, {delay:.6, height:1053, ease: Power3.easeOut});
+    TweenMax.from("#dropdownPlaceholder", .5, {delay:.6, height:1053, ease: Power3.easeOut});
 
     animationComplete = true;
 
@@ -242,11 +279,12 @@ function functionPVC() {
     errorAnimation("dropdownId2");
     return;
   }
+
   swipe("dropdownId2");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#dropdownDivId", 1, {height:600});
-  TweenMax.to("#layer11", .6, {height:600});
+  TweenMax.to("#dropdownPlaceholder", 1, {height:600});
+  
   animacijaOut();
   
   //prikazi PVC
@@ -261,8 +299,8 @@ function functionPVC() {
     TweenMax.fromTo(".pvcId3", {opacity:0, y:300}, {opacity:1, delay:.4, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".pvcId4", {opacity:0}, {opacity:1, delay:.5, duration:1, ease: Power3.easeOut});
     
-     animationComplete = true;
-
+    animationComplete = true;
+    
   }, 400);
 }
 
@@ -275,8 +313,8 @@ function functionPolilaminat() {
   swipe("dropdownId3");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#dropdownDivId", 1, {height:600});
-  TweenMax.to("#layer11", .6, {height:600});
+  TweenMax.to("#dropdownPlaceholder", 1, {height:600});
+  
   animacijaOut();
   
   //prikazi Polialuminat
@@ -305,8 +343,8 @@ function functionAluminij() {
   swipe("dropdownId4");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#dropdownDivId", 1, {height:600});
-  TweenMax.to("#layer11", .6, {height:600});
+  TweenMax.to("#dropdownPlaceholder", 1, {height:600});
+  
   animacijaOut();
   
   //prikazi Aluminij
@@ -335,8 +373,8 @@ function functionKontakt() {
   swipe("dropdownId6");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#dropdownDivId", .3, {height:853});
-  TweenMax.to("#layer11", .3, {height:853});
+  TweenMax.to("#dropdownPlaceholder", .3, {height:868});
+
   izkljuciDropdown(true, true, 8);
   animacijaOut();
   
@@ -351,7 +389,7 @@ function functionKontakt() {
     TweenMax.fromTo("#kontaktId1", {opacity:0, y:100, scale:.9}, {opacity:1, delay:0, y:0, duration:.5, scale:1, ease: Power3.easeOut});
     TweenMax.fromTo(".kontaktId2", {opacity:0, y:100}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".kontaktId3", {opacity:0, y:100}, {opacity:1, delay:.4, y:0, duration:.5, ease: Power3.easeOut});
-    TweenMax.from("#dropdownDivId", .5, {delay:.4, height:942, ease: Power3.easeOut});
+    TweenMax.from("#dropdownPlaceholder", .5, {delay:.4, height:942, ease: Power3.easeOut});
 
     animationComplete = true;
 
@@ -362,32 +400,38 @@ function functionKontakt() {
 function izkljuciDropdown(prvi, drugi, stFunkcije) {
 
   if (boolPodjetje && prvi) {
-    document.getElementById("layer12").style["pointer-events"] = "none";
     boolPodjetje = false;
     TweenMax.to("#arrowhead1", .3, {rotate:0, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId1", 1, {opacity:0, y:38, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId6", .3, {y:0, delay:.1, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId5", .3, {y:0, delay:.1, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId1", .5, {opacity:0, y:-16, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId6", .3, {y:-16, delay:.1, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId5", .3, {y:-16, delay:.1, ease: Power3.easeOut});
     if (!drugi) {
       setTimeout(function(){
         animacijaDropdown(2)}
         ,350);
+    } else {
+      setTimeout(function () {
+        prikaziDropdown1();
+      }, 350);
     }
     
   } else if (boolProizvodi && drugi) {
-    document.getElementById("layer13").style["pointer-events"] = "none";
     boolProizvodi = false;
     TweenMax.to("#arrowhead2", .3, {rotate:0, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId2", 1, {y:20, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId3", 1, {y:20, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId4", 1, {y:20, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId2", .7, {y:-60, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId3", .7, {y:-60, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId4", .7, {y:-60, ease: Power3.easeOut});
     TweenMax.to("#dropdownId2", .1, {opacity:0, delay:0});
     TweenMax.to("#dropdownId3", .1, {opacity:0, delay:.1});
     TweenMax.to("#dropdownId4", .1, {opacity:0, delay:.2});
-    TweenMax.to("#dropdownId6", .3, {y:0, delay:.15, ease: Power3.easeOut});
+    TweenMax.to("#dropdownId6", .7, {y:-48, ease: Power3.easeOut});
     if (!prvi) {
       setTimeout(function(){
         animacijaDropdown(1)
+      }, 400);
+    } else {
+      setTimeout(function () {
+        prikaziDropdown1();
       }, 400);
     }
     
@@ -401,26 +445,26 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
 
 function animacijaDropdown (index) {
   if (index == 1 && !boolPodjetje) {
-    document.getElementById("layer12").style["pointer-events"] = "auto";
     boolPodjetje = true;
+    prikaziDropdown2();
     
     TweenMax.to("#arrowhead1", .3, {rotate:90, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId5", .3, {y:18, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId6", .3, {y:18, ease: Power3.easeOut});
-    TweenMax.fromTo("#dropdownId1", {opacity:1, y:38}, {opacity:1, y:61, duration:.5, ease: Power3.easeOut});
+    TweenMax.from("#dropdownId6", .3, {y:-16, ease: Power3.easeOut});
+    TweenMax.from("#dropdownId5", .3, {y:-16, ease: Power3.easeOut});
+    TweenMax.from("#dropdownId1", .5, {opacity:0, y:-24, ease: Power3.easeOut});
     
   } else if (index == 2 && !boolProizvodi) {
-    document.getElementById("layer13").style["pointer-events"] = "auto";
     boolProizvodi = true;
+    prikaziDropdown3();
     
     TweenMax.to("#arrowhead2", .3, {rotate:90, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId6", .3, {y:54, ease: Power3.easeOut});
-    TweenMax.fromTo("#dropdownId2", {y:20}, {y:85, duration:.7, ease: Power3.easeOut});
-    TweenMax.fromTo("#dropdownId3", {y:20}, {y:85, duration:.7, ease: Power3.easeOut});
-    TweenMax.fromTo("#dropdownId4", {y:20}, {y:85, duration:.7, ease: Power3.easeOut});
-    TweenMax.to("#dropdownId2", {opacity:1, duration:.2, delay:.2});
-    TweenMax.to("#dropdownId3", {opacity:1, duration:.2, delay:.1});
-    TweenMax.to("#dropdownId4", {opacity:1, duration:.2, delay:0});
+    TweenMax.from("#dropdownId6", .7, {y:-48, ease: Power3.easeOut});
+    TweenMax.from("#dropdownId2", .7, {y:-60, ease: Power3.easeOut});
+    TweenMax.from("#dropdownId3", .7, {y:-60, ease: Power3.easeOut});
+    TweenMax.from("#dropdownId4", .7, {y:-60, ease: Power3.easeOut});
+    TweenMax.from("#dropdownId2", .1, {opacity:0, delay:.2});
+    TweenMax.from("#dropdownId3", .1, {opacity:0, delay:.1});
+    TweenMax.from("#dropdownId4", .1, {opacity:0, delay:0});
   }
 }
 
