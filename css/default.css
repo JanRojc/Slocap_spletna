@@ -59,9 +59,9 @@ body {
 	line-height: 16px;
 }
 
-.button:hover, .button2:hover {
-	text-decoration: underline;
-}
+/*.button:hover, .button2:hover {*/
+/*	text-decoration: underline;*/
+/*}*/
 
 .position {
   position:relative;
@@ -70,7 +70,7 @@ body {
 .positionSlikaSide {
   position:absolute;
   left:27px;
-  top:170px;
+  top:195px;
 }
 
 .rounded_top {
@@ -109,10 +109,10 @@ a:visited {
 	text-decoration: none;
 	color: #F8CF7F;
 }
-a:hover {
-	text-decoration: underline;
-	color: #F8CF7F;
-}
+/*a:hover {*/
+/*	text-decoration: underline;*/
+/*	color: #F8CF7F;*/
+/*}*/
 a:active {
 	text-decoration: none;
 	color: #F8CF7F;
@@ -248,7 +248,7 @@ a:active {
 .drawLogo {
   stroke-dasharray: 1900;
   stroke-dashoffset: 0;
-  opacity: 0;
+  /*opacity: 0;*/
   position: absolute;
   z-index: 3;
   width:50%;
@@ -257,15 +257,20 @@ a:active {
 }
 
 
-.drawColor {
-    opacity: 0;
-    position: absolute;
-    z-index: 1;
-    width:50%;
-    padding-left:25%;
-    padding-top:12%;
-}
+/*.drawColor {*/
+/*    opacity: 0;*/
+/*    position: absolute;*/
+/*    z-index: 1;*/
+/*    width:50%;*/
+/*    padding-left:25%;*/
+/*    padding-top:12%;*/
+/*}*/
 
 .optimizacija {
   color:#999999;
+}
+
+#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8 {
+  background: linear-gradient(to bottom, #fff0 95%, #F8CF7F 1%);
+  /*background-size: 0px;*/
 }

@@ -2,7 +2,7 @@ var boolPodjetje = false;
 var boolProizvodi = false;
 var stanje = 0;
 var animationComplete = true;
-var height = 600;
+
 // Doma-1, Podjetje-2, Galerija-3, Proizvodi-4, PVC-5, Polialuminat-6, Aluminij-7, Kontakt-8
 //scroll enable: galerija, proizvodi, kontakt
 //scroll disable: podjetje
@@ -68,39 +68,52 @@ function pdfAnimacijaOut3() {
   t3.reverse();
 }
 
+var timeline = new TimelineMax({paused:true});
+timeline.fromTo("#btn1", {}, {backgroundSize:"50% 100%",  transformOrigin:"top", duration:3});
+
+function underline(action) {
+  if (action == "in") {
+    timeline.play();
+  } else {
+    timeline.reverse();
+  }
+  // console.log(action);
+  
+}
+
 function prikaziDropdown1() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
       <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
-      <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div> \
-      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div> \
-      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div> \
-      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div> \
-      <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
+      <div id="dropdownId7"><button onmouseenter="underline("in")" onmouseleave="underline("out")" target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
+      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
+      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
+      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
+      <div class="positionSlikaSide"><img src="../images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
 }
 
 
 function prikaziDropdown2() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
       <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
-      <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div> \
-      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div> \
-      <div id="dropdownId1"><button target="_self" class="button2" onclick="functionGalerija()">- galerija</button></div> \
-      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div> \
-      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div> \
-      <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
+      <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a></button></div> \
+      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
+      <div id="dropdownId1"><button target="_self" class="button2" onclick="functionGalerija()"><a id="btn3">- galerija</a></button></div> \
+      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
+      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
+      <div class="positionSlikaSide"><img src="../images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
 }
 
 function prikaziDropdown3() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
     <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
-    <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()">Doma</button></div> \
-    <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="images/arrowhead.png" height="10" border="0"> O podjetju</button></div> \
-    <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="images/arrowhead.png" height="10" border="0"> Proizvodi</button></div> \
-    <div id="dropdownId2"><button target="_self" class="button2" onclick="functionPVC()">- Kapice PVC</button></div> \
-    <div id="dropdownId3"><button target="_self" class="button2" onclick="functionPolilaminat()">- Kapice polilaminat za steklenice penin</button></div> \
-		<div id="dropdownId4"><button target="_self" class="button2" onclick="functionAluminij()">- Kapice Aluminij za sodčke</button></div> \
-    <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()">Kontakt</button></div> \
-    <div class="positionSlikaSide"><img src="images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
+    <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a></button></div> \
+    <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
+    <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
+    <div id="dropdownId2"><button target="_self" class="button2" onclick="functionPVC()"><a id="btn5">- Kapice PVC</a></button></div> \
+    <div id="dropdownId3"><button target="_self" class="button2" onclick="functionPolilaminat()"><a id="btn6">- Kapice polilaminat za steklenice penin</a></button></div> \
+		<div id="dropdownId4"><button target="_self" class="button2" onclick="functionAluminij()"><a id="btn7">- Kapice Aluminij za sodčke</a></button></div> \
+    <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
+    <div class="positionSlikaSide"><img src="../images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
 }
 
 
@@ -109,7 +122,7 @@ function functionDoma() {
     errorAnimation("dropdownId7");
     return;
   }
-  height = 600;
+  
   animationComplete = false;
   TweenMax.to(window, .27, {scrollTo:{y:0}});
   izkljuciDropdown(true, true, 1);
@@ -147,7 +160,7 @@ function functionPodjetje() {
     errorAnimation("dropdownId8");
     return;
   }
-  height = 600;
+  
   swipe("dropdownId8");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
@@ -182,7 +195,7 @@ function functionGalerija() {
     errorAnimation("dropdownId1");
     return;
   }
-  height = 1569;
+  
   swipe("dropdownId1");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
@@ -247,7 +260,7 @@ function functionProizvodi() {
   swipe("dropdownId5");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#dropdownPlaceholder", .3, {height:776});
+  TweenMax.to("#dropdownPlaceholder", .2, {height:776});
   
   setTimeout(function(){
     izkljuciDropdown(true, false, 4);
