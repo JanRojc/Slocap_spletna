@@ -272,5 +272,6 @@ a:active {
 
 #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8 {
   background: linear-gradient(to bottom, #fff0 95%, #F8CF7F 1%);
+  background-repeat:no-repeat;
   /*background-size: 0px;*/
 }

@@ -34,6 +34,46 @@ var t3 = new TimelineMax({paused:true});
 t3.fromTo("#pdf3", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
 t3.fromTo("#pdfDownload3", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
 
+// underline animation timelines
+var timelineBtn1;
+var timelineBtn2;
+var timelineBtn3;
+var timelineBtn4;
+var timelineBtn5;
+var timelineBtn6;
+var timelineBtn7;
+var timelineBtn8;
+
+function reload() {
+   timelineBtn1 = new TimelineMax({paused:true});
+timelineBtn1.fromTo("#btn1", {backgroundPosition: "-47px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+
+  timelineBtn2 = new TimelineMax({paused:true});
+timelineBtn2.fromTo("#btn2", {backgroundPosition: "-76px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+
+  timelineBtn3 = new TimelineMax({paused:true});
+timelineBtn3.fromTo("#btn3", {backgroundPosition: "-52px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+
+  timelineBtn4 = new TimelineMax({paused:true});
+timelineBtn4.fromTo("#btn4", {backgroundPosition: "-65px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+
+  timelineBtn5 = new TimelineMax({paused:true});
+timelineBtn5.fromTo("#btn5", {backgroundPosition: "-70px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+
+  timelineBtn6 = new TimelineMax({paused:true});
+timelineBtn6.fromTo("#btn6", {backgroundPosition: "-194px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+
+  timelineBtn7 = new TimelineMax({paused:true});
+timelineBtn7.fromTo("#btn7", {backgroundPosition: "-137px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+
+  timelineBtn8 = new TimelineMax({paused:true});
+timelineBtn8.fromTo("#btn8", {backgroundPosition: "-58px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+}
+reload();
+
+
+
+
 //    ^^^
 //    |||
 // Page loading ---------------------------------------------------------------------
@@ -45,6 +85,8 @@ window.onresize = function () {
   document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
 };
 
+
+// pdf animation functions
 function pdfAnimacija1() {
   t1.play();
 }
@@ -68,52 +110,117 @@ function pdfAnimacijaOut3() {
   t3.reverse();
 }
 
-var timeline = new TimelineMax({paused:true});
-timeline.fromTo("#btn1", {}, {backgroundSize:"50% 100%",  transformOrigin:"top", duration:3});
 
-function underline(action) {
-  if (action == "in") {
-    timeline.play();
-  } else {
-    timeline.reverse();
-  }
-  // console.log(action);
-  
+//underline animation functions
+function underlineBtn1In() {
+    timelineBtn1.play();
 }
 
-function prikaziDropdown1() {
+function underlineBtn1Out() {
+    timelineBtn1.reverse();
+}
+
+
+function underlineBtn2In() {
+    timelineBtn2.play();
+}
+
+function underlineBtn2Out() {
+    timelineBtn2.reverse();
+}
+
+
+function underlineBtn3In() {
+    timelineBtn3.play();
+}
+
+function underlineBtn3Out() {
+    timelineBtn3.reverse();
+}
+
+
+function underlineBtn4In() {
+    timelineBtn4.play();
+}
+
+function underlineBtn4Out() {
+    timelineBtn4.reverse();
+}
+
+
+function underlineBtn5In() {
+    timelineBtn5.play();
+}
+
+function underlineBtn5Out() {
+    timelineBtn5.reverse();
+}
+
+
+function underlineBtn6In() {
+    timelineBtn6.play();
+}
+
+function underlineBtn6Out() {
+    timelineBtn6.reverse();
+}
+
+
+function underlineBtn7In() {
+    timelineBtn7.play();
+}
+
+function underlineBtn7Out() {
+    timelineBtn7.reverse();
+}
+
+
+function underlineBtn8In() {
+    timelineBtn8.play();
+}
+
+function underlineBtn8Out() {
+    timelineBtn8.reverse();
+}
+
+
+
+function showDropdown1() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
       <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
-      <div id="dropdownId7"><button onmouseenter="underline("in")" onmouseleave="underline("out")" target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
-      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
-      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
-      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
+      <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
+      <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
+      <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
+      <div id="dropdownId6"><button onmouseenter="underlineBtn8In()" onmouseleave="underlineBtn8Out()" target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
       <div class="positionSlikaSide"><img src="../images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
+      reload();
 }
 
 
-function prikaziDropdown2() {
+function showDropdown2() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
       <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
-      <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a></button></div> \
-      <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
-      <div id="dropdownId1"><button target="_self" class="button2" onclick="functionGalerija()"><a id="btn3">- galerija</a></button></div> \
-      <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
-      <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
+      <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
+      <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
+      <div id="dropdownId1"><button onmouseenter="underlineBtn3In()" onmouseleave="underlineBtn3Out()" target="_self" class="button2" onclick="functionGalerija()"><a id="btn3">- galerija</a></button></div> \
+      <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
+      <div id="dropdownId6"><button onmouseenter="underlineBtn8In()" onmouseleave="underlineBtn8Out()" target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
       <div class="positionSlikaSide"><img src="../images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
+      reload();
 }
 
-function prikaziDropdown3() {
+function showDropdown3() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
     <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
-    <div id="dropdownId7"><button target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a></button></div> \
-    <div id="dropdownId8"><button target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
-    <div id="dropdownId5"><button target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
-    <div id="dropdownId2"><button target="_self" class="button2" onclick="functionPVC()"><a id="btn5">- Kapice PVC</a></button></div> \
-    <div id="dropdownId3"><button target="_self" class="button2" onclick="functionPolilaminat()"><a id="btn6">- Kapice polilaminat za steklenice penin</a></button></div> \
-		<div id="dropdownId4"><button target="_self" class="button2" onclick="functionAluminij()"><a id="btn7">- Kapice Aluminij za sodčke</a></button></div> \
-    <div id="dropdownId6"><button target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
+    <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
+    <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
+    <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
+    <div id="dropdownId2"><button onmouseenter="underlineBtn5In()" onmouseleave="underlineBtn5Out()" target="_self" class="button2" onclick="functionPVC()"><a id="btn5">- Kapice PVC</a></button></div> \
+    <div id="dropdownId3"><button onmouseenter="underlineBtn6In()" onmouseleave="underlineBtn6Out()" target="_self" class="button2" onclick="functionPolilaminat()"><a id="btn6">- Kapice polilaminat za steklenice penin</a></button></div> \
+		<div id="dropdownId4"><button onmouseenter="underlineBtn7In()" onmouseleave="underlineBtn7Out()" target="_self" class="button2" onclick="functionAluminij()"><a id="btn7">- Kapice Aluminij za sodčke</a></button></div> \
+    <div id="dropdownId6"><button onmouseenter="underlineBtn8In()" onmouseleave="underlineBtn8Out()" target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
     <div class="positionSlikaSide"><img src="../images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
+    reload();
 }
 
 
@@ -132,7 +239,7 @@ function functionDoma() {
     TweenMax.to("#dropdownPlaceholder", .1, {height:600});
     time = 0;
   } else {
-    swipe("dropdownId7");
+    // swipe("dropdownId7");
     TweenMax.to("#dropdownPlaceholder", 1.3, {height:600});
     time = 400;
   }
@@ -161,7 +268,7 @@ function functionPodjetje() {
     return;
   }
   
-  swipe("dropdownId8");
+  // swipe("dropdownId8");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   document.getElementById("bodyId").style.overflow = "hidden";
@@ -196,7 +303,7 @@ function functionGalerija() {
     return;
   }
   
-  swipe("dropdownId1");
+  // swipe("dropdownId1");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   animacijaOut();
@@ -257,7 +364,7 @@ function functionProizvodi() {
     errorAnimation("dropdownId5");
     return;
   }
-  swipe("dropdownId5");
+  // swipe("dropdownId5");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   TweenMax.to("#dropdownPlaceholder", .2, {height:776});
@@ -293,7 +400,7 @@ function functionPVC() {
     return;
   }
 
-  swipe("dropdownId2");
+  // swipe("dropdownId2");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
@@ -323,7 +430,7 @@ function functionPolilaminat() {
     errorAnimation("dropdownId3");
     return;
   }
-  swipe("dropdownId3");
+  // swipe("dropdownId3");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
@@ -353,7 +460,7 @@ function functionAluminij() {
     errorAnimation("dropdownId4");
     return;
   }
-  swipe("dropdownId4");
+  // swipe("dropdownId4");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
@@ -383,7 +490,7 @@ function functionKontakt() {
     errorAnimation("dropdownId6");
     return;
   }
-  swipe("dropdownId6");
+  // swipe("dropdownId6");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   TweenMax.to("#dropdownPlaceholder", .3, {height:868});
@@ -424,7 +531,7 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
         ,350);
     } else {
       setTimeout(function () {
-        prikaziDropdown1();
+        showDropdown1();
       }, 350);
     }
     
@@ -444,7 +551,7 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
       }, 400);
     } else {
       setTimeout(function () {
-        prikaziDropdown1();
+        showDropdown1();
       }, 400);
     }
     
@@ -459,7 +566,7 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
 function animacijaDropdown (index) {
   if (index == 1 && !boolPodjetje) {
     boolPodjetje = true;
-    prikaziDropdown2();
+    showDropdown2();
     
     TweenMax.to("#arrowhead1", .3, {rotate:90, ease: Power3.easeOut});
     TweenMax.from("#dropdownId6", .3, {y:-16, ease: Power3.easeOut});
@@ -468,7 +575,7 @@ function animacijaDropdown (index) {
     
   } else if (index == 2 && !boolProizvodi) {
     boolProizvodi = true;
-    prikaziDropdown3();
+    showDropdown3();
     
     TweenMax.to("#arrowhead2", .3, {rotate:90, ease: Power3.easeOut});
     TweenMax.from("#dropdownId6", .7, {y:-48, ease: Power3.easeOut});
@@ -482,7 +589,7 @@ function animacijaDropdown (index) {
 }
 
 function swipe(id) {
-  TweenMax.to("#" + id, .5, {'backgroundPosition': 432});
+  TweenMax.to("#" + id, .5, {backgroundPosition: 432});
   document.getElementById(id).style.backgroundPosition = 0;
 }
 
