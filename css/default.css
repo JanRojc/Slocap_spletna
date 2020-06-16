@@ -69,10 +69,6 @@ body {
   line-height: 24px;
 }
 
-/*.button:hover, .button2:hover {*/
-/*	text-decoration: underline;*/
-/*}*/
-
 .position {
   position:relative;
 }
@@ -119,10 +115,7 @@ a:visited {
 	text-decoration: none;
 	color: #F8CF7F;
 }
-/*a:hover {*/
-/*	text-decoration: underline;*/
-/*	color: #F8CF7F;*/
-/*}*/
+
 a:active {
 	text-decoration: none;
 	color: #F8CF7F;
@@ -152,10 +145,6 @@ a:active {
 	color: #F8CF7F;
 	font-family: Tahoma;
 	font-size: 14px;
-}
-
-#mainPlaceholder {
-	position: relative;
 }
 
 #layer1 {
@@ -250,21 +239,52 @@ a:active {
 	z-index: 1;
 }
 
+
 #loadingScreen {
   position: absolute;
   height: 100vh;
   width: 100vw;
-  background-color: black;
   z-index: 2;
+  background-color: black;
   pointer-events: auto;
 }
+
+#loadingScreenBackground1 {
+  position: absolute;
+  height: 100vh;
+  width: 125vw;
+  z-index: 5;
+  background: url(../images/ozadje.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*#loadingScreenBackground2 {*/
+/*  position: absolute;*/
+/*  height: 100vh;*/
+/*  width: 125vw;*/
+/*  z-index: 4;*/
+/*  background: url(../images/ozadje2.svg);*/
+/*  background-size: cover;*/
+/*  background-repeat: no-repeat;*/
+/*}*/
+
+/*#loadingScreenBackground3 {*/
+/*  position: absolute;*/
+/*  height: 100vh;*/
+/*  width: 125vw;*/
+/*  z-index: 3;*/
+/*  background: url(../images/ozadje3.svg);*/
+/*  background-size: cover;*/
+/*  background-repeat: no-repeat;*/
+/*}*/
 
 .drawLogo {
   stroke-dasharray: 1900;
   stroke-dashoffset: 0;
   /*opacity: 0;*/
   position: absolute;
-  z-index: 3;
+  z-index: 6;
   width:50%;
   padding-left:25%;
   padding-top:12%;

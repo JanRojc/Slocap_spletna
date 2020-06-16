@@ -1,4 +1,4 @@
-var boolPodjetje = false;
+var boolPodjetje = true;
 var boolProizvodi = false;
 var stanje = 0;
 var animationComplete = true;
@@ -22,17 +22,17 @@ document.getElementById("bodyId").style['background-position'] = window.innerWid
 
 // pdf animation timelines
 var t1 = new TimelineMax({paused:true});
-t1.fromTo("#pdf1", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
-t1.fromTo("#pdfDownload1", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
+t1.fromTo("#pdf1", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.2});
+t1.fromTo("#pdfDownload1", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.2});
 
 
 var t2 = new TimelineMax({paused:true});
-t2.fromTo("#pdf2", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
-t2.fromTo("#pdfDownload2", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
+t2.fromTo("#pdf2", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.2});
+t2.fromTo("#pdfDownload2", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.2});
 
 var t3 = new TimelineMax({paused:true});
-t3.fromTo("#pdf3", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.3});
-t3.fromTo("#pdfDownload3", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.3});
+t3.fromTo("#pdf3", {y:0, rotateY:0, opacity:1}, {y:-5, rotateY:90, opacity:.2, duration:.2});
+t3.fromTo("#pdfDownload3", {y:-5, rotateY:-90, opacity:.2}, {y:0, rotateY:0, opacity:1, duration:.2});
 
 // underline animation timelines
 var timelineBtn1;
@@ -375,7 +375,7 @@ function functionGalerija() {
   // swipe("dropdownId1");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  document.getElementById("bodyId").style.overflow = "auto";
+  document.getElementById("bodyId").style["overflow-y"] = "auto";
   
   animacijaOut();
   TweenMax.to("#dropdownPlaceholder", .7, {height:1594});
@@ -571,7 +571,7 @@ function functionKontakt() {
   // swipe("dropdownId6");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  document.getElementById("bodyId").style.overflow = "auto";
+  document.getElementById("bodyId").style["overflow-y"] = "auto";
   
   TweenMax.to("#dropdownPlaceholder", .3, {height:868});
 
