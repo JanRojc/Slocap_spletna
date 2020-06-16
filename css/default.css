@@ -10,9 +10,9 @@ button:focus {
 
 
 body {
-  overflow-x:hidden;
+  overflow-x: hidden;
   background-color:#999999;
-	background-image: url(../images/background_logo.png);
+  background-image: url(../images/background_logo.png);
 }
 
 html,
@@ -57,6 +57,16 @@ body {
   cursor:pointer;
   padding-left: 14px;
 	line-height: 16px;
+}
+
+.buttonJeziki {
+  border: none;
+  background: none;
+  cursor:pointer;
+  color: #F8CF7F;
+	
+	float: right;
+  line-height: 24px;
 }
 
 /*.button:hover, .button2:hover {*/
@@ -142,6 +152,10 @@ a:active {
 	color: #F8CF7F;
 	font-family: Tahoma;
 	font-size: 14px;
+}
+
+#mainPlaceholder {
+	position: relative;
 }
 
 #layer1 {
@@ -270,7 +284,7 @@ a:active {
   color:#999999;
 }
 
-#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8 {
+#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #slo, #ger, #hrv, #ita, #srb, #eng {
   background: linear-gradient(to bottom, #fff0 95%, #F8CF7F 1%);
   background-repeat:no-repeat;
   /*background-size: 0px;*/

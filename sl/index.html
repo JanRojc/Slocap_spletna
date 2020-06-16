@@ -58,16 +58,14 @@
     <table width="818" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
         <td colspan="2" style="padding-top:10px; padding-right:30px">
-          <div align="right">
-            <span class="style1">
-              <a href="index.html" target="_self">Slovenščina</a>&nbsp;&nbsp;&nbsp;
-              <a href="../ger/index.html" target="_self">Deutsch</a>&nbsp;&nbsp;&nbsp;
-              <a href="../cro/index.html" target="_self">Hrvatski</a>&nbsp;&nbsp;&nbsp;
-              <a href="../ita/index.html" target="_self">Italiano</a>&nbsp;&nbsp;&nbsp;
-              <a href="../srp/index.html" target="_self">Srpski</a>&nbsp;&nbsp;&nbsp;
-              <a href="../eng/index.html" target="_self">English</a>
-            </span>
-          </div>
+          <span class="style1">
+            <button href="../eng/index.html" target="_self" class="buttonJeziki" onmouseenter="underlineEngIn()" onmouseleave="underlineEngOut()"><a id="eng">English</a></button>
+			<button href="../srp/index.html" target="_self" class="buttonJeziki" onmouseenter="underlineSrbIn()" onmouseleave="underlineSrbOut()"><a id="srb">Srpski</a></button>
+			<button href="../ita/index.html" target="_self" class="buttonJeziki" onmouseenter="underlineItaIn()" onmouseleave="underlineItaOut()"><a id="ita">Italiano</a></button>
+			<button href="../cro/index.html" target="_self" class="buttonJeziki" onmouseenter="underlineHrvIn()" onmouseleave="underlineHrvOut()"><a id="hrv">Hrvatski</a></button>
+			<button href="../ger/index.html" target="_self" class="buttonJeziki" onmouseenter="underlineGerIn()" onmouseleave="underlineGerOut()"><a id="ger">Deutsch</a></button>
+			<button href="../sl/index.html" target="_self" class="buttonJeziki" onmouseenter="underlineSloIn()" onmouseleave="underlineSloOut()"><a id="slo">Slovenščina</a></button>
+          </span>
         </td>
       </tr>
       <tr>
@@ -113,12 +111,12 @@
             <img id="slika4" src="../images/podjetje04.jpg" width="588" height="1" class="rounded_bot"/>
           </div>
           <div id="layer4">
-            <span><button target="_self" class="proizvodiId1 button paddingTop" onclick="functionPVC()">Kapice PVC</button></span><br /><br /> 
+            <span><button target="_self" class="proizvodiId1 button paddingTop" onclick="functionPVC()">Kapice PVC</button></span><br /> 
             <button target="_self" class="button3" onclick="functionPVC()"><img id="proizvodiSlika1" src="../images/slocap_kapice.jpg" alt="Kapice PVC" border="0" height="1" class="rounded_top rounded_bot"/></button><br /><br /> 
-            <span><button target="_self" class="button proizvodiId2" onclick="functionPolilaminat()">Kapice polilaminat za steklenice penin</button></span><br /><br /> 
-            <button target="_self" class="button3" onclick="functionPolilaminat()"><img src="../images/slocap_kapsuloni.jpg" alt="Kapice polilaminat za steklenice penin" border="0" class="proizvodiId2 rounded_top rounded_bot"/></button><br /><br /> 
-            <span><button target="_self" class="button proizvodiId3" onclick="functionAluminij()">Kapice Aluminij za sodčke</button></span><br /><br /> 
-            <button target="_self" class="button3" onclick="functionAluminij()"><img src="../images/slocap_kalote.jpg" alt="Kapice Alumini za sodčke" border="0" class="proizvodiId3 rounded_top rounded_bot"/></button>
+            <span><button target="_self" class="button proizvodiId2" onclick="functionPolilaminat()">Kapice polilaminat za steklenice penin</button></span><br /> 
+            <button target="_self" class="button3" onclick="functionPolilaminat()"><img src="../images/slocap_kapsuloni.jpg" alt="Kapice polilaminat za steklenice penin" border="0" height="192" class="proizvodiId2 rounded_top rounded_bot"/></button><br /><br /> 
+            <span><button target="_self" class="button proizvodiId3" onclick="functionAluminij()">Kapice Aluminij za sodčke</button></span><br />
+            <button target="_self" class="button3" onclick="functionAluminij()"><img src="../images/slocap_kalote.jpg" alt="Kapice Alumini za sodčke" border="0" height="192" class="proizvodiId3 rounded_top rounded_bot"/></button>
           </div>
           <div id="layer5">
             <span style="display:inline-block" target="_self" class="pvcId1 style8 paddingTop">Kapice PVC</span><br /><br /> 
@@ -177,8 +175,8 @@
             </span>
           </div>
           <div id="layer8" class="style5">
-            <img id="kontaktId1" src="../images/podjetje_slocap_b.jpg" width="588" height="1" border="0" class="rounded_top rounded_bot" /><br /><br /> 
-            <iframe class="kontaktId2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.0549761857833!2d13.85618516569426!3d45.70993392503351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477b159fa1403c47%3A0x5708e34ec77402d8!2sCesta+na+Lenivec+30d%2C+6210+Se%C5%BEana!5e0!3m2!1ssl!2ssi!4v1508485303364" width="588" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br /> 
+            <img id="kontaktId1" src="../images/podjetje_slocap_b.jpg" width="573" height="1" border="0" class="rounded_top rounded_bot" /><br /><br /> 
+            <iframe class="kontaktId2" width="573" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.0549761857833!2d13.85618516569426!3d45.70993392503351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477b159fa1403c47%3A0x5708e34ec77402d8!2sCesta+na+Lenivec+30d%2C+6210+Se%C5%BEana!5e0!3m2!1ssl!2ssi!4v1508485303364" frameborder="0" style="border:0" allowfullscreen></iframe><br /> 
             <div class="kontaktId3"> 
               <span class="style9">Slocap d.o.o. Sežana</span><br /> 
               Cesta na Lenivec 30 D<br /> 
@@ -199,6 +197,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollToPlugin.min.js"></script>
-  <script src="../script/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

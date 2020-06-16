@@ -71,7 +71,23 @@ timelineBtn8.fromTo("#btn8", {backgroundPosition: "-58px 0px"}, {backgroundPosit
 }
 reload();
 
+  var timelineSlo = new TimelineMax({paused:true});
+  timelineSlo.fromTo("#slo", {backgroundPosition: "-77px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+  
+  var timelineGer = new TimelineMax({paused:true});
+  timelineGer.fromTo("#ger", {backgroundPosition: "-54px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+  
+  var timelineHrv = new TimelineMax({paused:true});
+  timelineHrv.fromTo("#hrv", {backgroundPosition: "-53px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+  
+  var timelineIta = new TimelineMax({paused:true});
+  timelineIta.fromTo("#ita", {backgroundPosition: "-48px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
 
+  var timelineSrb = new TimelineMax({paused:true});
+  timelineSrb.fromTo("#srb", {backgroundPosition: "-42px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+
+  var timelineEng = new TimelineMax({paused:true});
+  timelineEng.fromTo("#eng", {backgroundPosition: "-49px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
 
 
 //    ^^^
@@ -184,6 +200,60 @@ function underlineBtn8Out() {
 }
 
 
+function underlineSloIn() {
+    timelineSlo.play();
+}
+
+function underlineSloOut() {
+    timelineSlo.reverse();
+}
+
+
+function underlineGerIn() {
+    timelineGer.play();
+}
+
+function underlineGerOut() {
+    timelineGer.reverse();
+}
+
+
+function underlineHrvIn() {
+    timelineHrv.play();
+}
+
+function underlineHrvOut() {
+    timelineHrv.reverse();
+}
+
+
+function underlineItaIn() {
+    timelineIta.play();
+}
+
+function underlineItaOut() {
+    timelineIta.reverse();
+}
+
+
+function underlineSrbIn() {
+    timelineSrb.play();
+}
+
+function underlineSrbOut() {
+    timelineSrb.reverse();
+}
+
+
+function underlineEngIn() {
+    timelineEng.play();
+}
+
+function underlineEngOut() {
+    timelineEng.reverse();
+}
+
+
 
 function showDropdown1() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
@@ -231,7 +301,9 @@ function functionDoma() {
   }
   
   animationComplete = false;
-  TweenMax.to(window, .27, {scrollTo:{y:0}});
+  TweenMax.to(window, .2, {scrollTo:{y:0}});
+  document.getElementById("bodyId").style.overflow = "hidden";
+  
   izkljuciDropdown(true, true, 1);
   animacijaOut();
   var time;
@@ -288,9 +360,6 @@ function functionPodjetje() {
     TweenMax.fromTo(".podjetjeId3", {opacity:0, y:300}, {opacity:1, delay:.6, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".podjetjeId4", {opacity:0, y:300}, {opacity:1, delay:.8, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".podjetjeId5", {opacity:0, y:300}, {opacity:1, delay:1, y:0, duration:.5, ease: Power3.easeOut});
-    setTimeout(function(){
-      document.getElementById("bodyId").style["overflow-y"] = "auto";
-    }, 1500);
     
     animationComplete = true;
   }, 400);
@@ -306,6 +375,8 @@ function functionGalerija() {
   // swipe("dropdownId1");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
+  document.getElementById("bodyId").style.overflow = "auto";
+  
   animacijaOut();
   TweenMax.to("#dropdownPlaceholder", .7, {height:1594});
 
@@ -367,7 +438,9 @@ function functionProizvodi() {
   // swipe("dropdownId5");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  TweenMax.to("#dropdownPlaceholder", .2, {height:776});
+  document.getElementById("bodyId").style.overflow = "hidden";
+  
+  TweenMax.to("#dropdownPlaceholder", .2, {height:710});
   
   setTimeout(function(){
     izkljuciDropdown(true, false, 4);
@@ -379,14 +452,13 @@ function functionProizvodi() {
     stanje = 4;
       
     //main animacija
-    document.getElementById("proizvodiSlika1").style.height = "197px";
+    document.getElementById("proizvodiSlika1").style.height = "192px";
     document.getElementById("layer4").style.opacity = 1;
     document.getElementById("layer4").style["pointer-events"] = "auto";
     TweenMax.fromTo(".proizvodiId1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo("#proizvodiSlika1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".proizvodiId2", {opacity:0, y:300}, {opacity:1, delay:.4, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".proizvodiId3", {opacity:0, y:300}, {opacity:1, delay:.6, y:0, duration:.5, ease: Power3.easeOut});
-    TweenMax.from("#dropdownPlaceholder", .5, {delay:.6, height:1053, ease: Power3.easeOut});
 
     animationComplete = true;
 
@@ -403,6 +475,8 @@ function functionPVC() {
   // swipe("dropdownId2");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
+  document.getElementById("bodyId").style.overflow = "hidden";
+  
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
   
   animacijaOut();
@@ -433,6 +507,8 @@ function functionPolilaminat() {
   // swipe("dropdownId3");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
+  document.getElementById("bodyId").style.overflow = "hidden";
+  
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
   
   animacijaOut();
@@ -463,6 +539,8 @@ function functionAluminij() {
   // swipe("dropdownId4");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
+  document.getElementById("bodyId").style.overflow = "hidden";
+  
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
   
   animacijaOut();
@@ -493,6 +571,8 @@ function functionKontakt() {
   // swipe("dropdownId6");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
+  document.getElementById("bodyId").style.overflow = "auto";
+  
   TweenMax.to("#dropdownPlaceholder", .3, {height:868});
 
   izkljuciDropdown(true, true, 8);
