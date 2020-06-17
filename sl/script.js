@@ -77,14 +77,14 @@ reload();
   var timelineGer = new TimelineMax({paused:true});
   timelineGer.fromTo("#ger", {backgroundPosition: "-54px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
   
-  var timelineHrv = new TimelineMax({paused:true});
-  timelineHrv.fromTo("#hrv", {backgroundPosition: "-53px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+  var timelineCro = new TimelineMax({paused:true});
+  timelineCro.fromTo("#cro", {backgroundPosition: "-53px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
   
   var timelineIta = new TimelineMax({paused:true});
   timelineIta.fromTo("#ita", {backgroundPosition: "-48px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
 
-  var timelineSrb = new TimelineMax({paused:true});
-  timelineSrb.fromTo("#srb", {backgroundPosition: "-42px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+  var timelineSrp = new TimelineMax({paused:true});
+  timelineSrp.fromTo("#srp", {backgroundPosition: "-42px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
 
   var timelineEng = new TimelineMax({paused:true});
   timelineEng.fromTo("#eng", {backgroundPosition: "-49px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
@@ -102,7 +102,37 @@ window.onresize = function () {
 };
 
 
+
+// languages
+
+function openSlo() {
+  window.location.href = "../sl/index.html";
+}
+
+function openGer() {
+  window.location.href = "../ger/index.html";
+}
+
+function openCro() {
+  window.location.href = "../cro/index.html";
+}
+
+function openIta() {
+  window.location.href = "../ita/index.html";
+}
+
+function openSrp() {
+  window.location.href = "../srp/index.html";
+}
+
+function openEng() {
+  window.location.href = "../eng/index.html";
+}
+
+
+
 // pdf animation functions
+
 function pdfAnimacija1() {
   t1.play();
 }
@@ -127,7 +157,9 @@ function pdfAnimacijaOut3() {
 }
 
 
-//underline animation functions
+
+// underline animation functions
+
 function underlineBtn1In() {
     timelineBtn1.play();
 }
@@ -218,12 +250,12 @@ function underlineGerOut() {
 }
 
 
-function underlineHrvIn() {
-    timelineHrv.play();
+function underlineCroIn() {
+    timelineCro.play();
 }
 
-function underlineHrvOut() {
-    timelineHrv.reverse();
+function underlineCroOut() {
+    timelineCro.reverse();
 }
 
 
@@ -236,12 +268,12 @@ function underlineItaOut() {
 }
 
 
-function underlineSrbIn() {
-    timelineSrb.play();
+function underlineSrpIn() {
+    timelineSrp.play();
 }
 
-function underlineSrbOut() {
-    timelineSrb.reverse();
+function underlineSrpOut() {
+    timelineSrp.reverse();
 }
 
 
@@ -255,13 +287,15 @@ function underlineEngOut() {
 
 
 
+// dropdowns
+
 function showDropdown1() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
       <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
-      <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
-      <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
-      <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
-      <div id="dropdownId6"><button onmouseenter="underlineBtn8In()" onmouseleave="underlineBtn8Out()" target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
+      <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
+      <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
+      <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
+      <div id="dropdownId6"><button onmouseenter="underlineBtn8In()" onmouseleave="underlineBtn8Out()" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
       <div class="positionSlikaSide"><img src="../images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
       reload();
 }
@@ -270,11 +304,11 @@ function showDropdown1() {
 function showDropdown2() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
       <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
-      <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
-      <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
-      <div id="dropdownId1"><button onmouseenter="underlineBtn3In()" onmouseleave="underlineBtn3Out()" target="_self" class="button2" onclick="functionGalerija()"><a id="btn3">- galerija</a></button></div> \
-      <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
-      <div id="dropdownId6"><button onmouseenter="underlineBtn8In()" onmouseleave="underlineBtn8Out()" target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
+      <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
+      <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
+      <div id="dropdownId1"><button onmouseenter="underlineBtn3In()" onmouseleave="underlineBtn3Out()" class="button2" onclick="functionGalerija()"><a id="btn3">- galerija</a></button></div> \
+      <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
+      <div id="dropdownId6"><button onmouseenter="underlineBtn8In()" onmouseleave="underlineBtn8Out()" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
       <div class="positionSlikaSide"><img src="../images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
       reload();
 }
@@ -282,17 +316,19 @@ function showDropdown2() {
 function showDropdown3() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
     <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
-    <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" target="_self" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
-    <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" target="_self" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
-    <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" target="_self" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
-    <div id="dropdownId2"><button onmouseenter="underlineBtn5In()" onmouseleave="underlineBtn5Out()" target="_self" class="button2" onclick="functionPVC()"><a id="btn5">- Kapice PVC</a></button></div> \
-    <div id="dropdownId3"><button onmouseenter="underlineBtn6In()" onmouseleave="underlineBtn6Out()" target="_self" class="button2" onclick="functionPolilaminat()"><a id="btn6">- Kapice polilaminat za steklenice penin</a></button></div> \
-		<div id="dropdownId4"><button onmouseenter="underlineBtn7In()" onmouseleave="underlineBtn7Out()" target="_self" class="button2" onclick="functionAluminij()"><a id="btn7">- Kapice Aluminij za sodčke</a></button></div> \
-    <div id="dropdownId6"><button onmouseenter="underlineBtn8In()" onmouseleave="underlineBtn8Out()" target="_self" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
+    <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
+    <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
+    <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
+    <div id="dropdownId2"><button onmouseenter="underlineBtn5In()" onmouseleave="underlineBtn5Out()" class="button2" onclick="functionPVC()"><a id="btn5">- Kapice PVC</a></button></div> \
+    <div id="dropdownId3"><button onmouseenter="underlineBtn6In()" onmouseleave="underlineBtn6Out()" class="button2" onclick="functionPolilaminat()"><a id="btn6">- Kapice polilaminat za steklenice penin</a></button></div> \
+		<div id="dropdownId4"><button onmouseenter="underlineBtn7In()" onmouseleave="underlineBtn7Out()" class="button2" onclick="functionAluminij()"><a id="btn7">- Kapice Aluminij za sodčke</a></button></div> \
+    <div id="dropdownId6"><button onmouseenter="underlineBtn8In()" onmouseleave="underlineBtn8Out()" class="button" onclick="functionKontakt()"><a id="btn8">Kontakt</a></button></div> \
     <div class="positionSlikaSide"><img src="../images/podjetje_side.jpg" width="176" height="264" border="0" class="rounded_top rounded_bot"/><br /></div></div>';
     reload();
 }
 
+
+// main functions
 
 function functionDoma() {
   if (stanje == 1 || !animationComplete) {
@@ -304,7 +340,7 @@ function functionDoma() {
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   document.getElementById("bodyId").style.overflow = "hidden";
   
-  izkljuciDropdown(true, true, 1);
+  closeDropdown(true, true, 1);
   animacijaOut();
   var time;
   if (stanje == 0) {
@@ -346,7 +382,7 @@ function functionPodjetje() {
   document.getElementById("bodyId").style.overflow = "hidden";
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
 
-  izkljuciDropdown(false, true, 2);
+  closeDropdown(false, true, 2);
   animacijaOut();
   //prikazi podjetje
   setTimeout(function(){
@@ -443,7 +479,7 @@ function functionProizvodi() {
   TweenMax.to("#dropdownPlaceholder", .2, {height:710});
   
   setTimeout(function(){
-    izkljuciDropdown(true, false, 4);
+    closeDropdown(true, false, 4);
   },100);
   animacijaOut();
   
@@ -575,7 +611,7 @@ function functionKontakt() {
   
   TweenMax.to("#dropdownPlaceholder", .3, {height:868});
 
-  izkljuciDropdown(true, true, 8);
+  closeDropdown(true, true, 8);
   animacijaOut();
   
   //prikazi Kontakt
@@ -593,11 +629,15 @@ function functionKontakt() {
 
     animationComplete = true;
 
-  }, 400);
+  }, 600);
 }
 
 
-function izkljuciDropdown(prvi, drugi, stFunkcije) {
+
+
+// animation functions
+
+function closeDropdown(prvi, drugi, stFunkcije) {
 
   if (boolPodjetje && prvi) {
     boolPodjetje = false;
@@ -607,7 +647,7 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
     TweenMax.to("#dropdownId5", .3, {y:-16, delay:.1, ease: Power3.easeOut});
     if (!drugi) {
       setTimeout(function(){
-        animacijaDropdown(2)}
+        animationDropdown(2)}
         ,350);
     } else {
       setTimeout(function () {
@@ -627,7 +667,7 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
     TweenMax.to("#dropdownId6", .7, {y:-48, ease: Power3.easeOut});
     if (!prvi) {
       setTimeout(function(){
-        animacijaDropdown(1)
+        animationDropdown(1)
       }, 400);
     } else {
       setTimeout(function () {
@@ -637,13 +677,13 @@ function izkljuciDropdown(prvi, drugi, stFunkcije) {
     
     
   } else if (prvi && !drugi) {
-    animacijaDropdown(2);
+    animationDropdown(2);
   } else if (drugi && !prvi) {
-    animacijaDropdown(1);
+    animationDropdown(1);
   }
 }
 
-function animacijaDropdown (index) {
+function animationDropdown (index) {
   if (index == 1 && !boolPodjetje) {
     boolPodjetje = true;
     showDropdown2();
