@@ -4,8 +4,8 @@ var stanje = 0;
 var animationComplete = true;
 
 // Doma-1, Podjetje-2, Galerija-3, Proizvodi-4, PVC-5, Polialuminat-6, Aluminij-7, Kontakt-8
-//scroll enable: galerija, proizvodi, kontakt
-//scroll disable: podjetje
+//scroll enabled: galerija, kontakt
+
 
 
 

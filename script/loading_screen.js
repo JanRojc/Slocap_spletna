@@ -1,4 +1,5 @@
 // loading screen
+
 document.getElementById("bodyId").style.overflow = "hidden";
 document.getElementById("drawLogoId").style.opacity = 1;
 
@@ -8,10 +9,20 @@ anime({
   strokeDashoffset: [1900, 0],
   easing: 'easeInOutQuad',
   delay: 500,
-  duration: 5000
+  duration: 4000
 });
-TweenMax.to("#loadingScreen", 2, {x:"-125%", delay:2, ease: Power3.easeIn});
-// TweenMax.to("#loadingScreen", 1, {opacity:0, delay:4});
+TweenMax.to("#loadingScreen", 0, {x:-1});
+
+
+// TweenMax.to("#drawLogoId", 1, {x:"-100%", delay:2, ease: Power1.easeIn});
+TweenMax.to("#loadingScreenBackground1", 1.5, {x:"-100%", delay:2, ease: Power3.easeInOut});
+TweenMax.to("#loadingScreenBackground2", 1.5, {x:"-100%", delay:2.05, ease: Power3.easeInOut});
+TweenMax.to("#loadingScreenBackground3", 1.5, {x:"-100%", delay:2.1, ease: Power3.easeInOut});
+TweenMax.to("#loadingScreen", 1, {opacity:0, delay:4.4});
+
+setTimeout(function () {
+  document.getElementById("loadingScreen").style['background-color'] = "rgba(0, 0, 0, 0)";
+}, 1000);
 
 setTimeout(function () {
   document.getElementById("loadingScreen").style['pointer-events'] = "none";
