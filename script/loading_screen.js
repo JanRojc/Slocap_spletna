@@ -14,7 +14,6 @@ anime({
 TweenMax.to("#loadingScreen", 0, {x:-1});
 
 
-// TweenMax.to("#drawLogoId", 1, {x:"-100%", delay:2, ease: Power1.easeIn});
 TweenMax.to("#loadingScreenBackground1", 1.5, {x:"-100%", delay:2, ease: Power3.easeInOut});
 TweenMax.to("#loadingScreenBackground2", 1.5, {x:"-100%", delay:2.05, ease: Power3.easeInOut});
 TweenMax.to("#loadingScreenBackground3", 1.5, {x:"-100%", delay:2.1, ease: Power3.easeInOut});
