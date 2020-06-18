@@ -414,7 +414,7 @@ function functionGalerija() {
   document.getElementById("bodyId").style["overflow-y"] = "auto";
   
   animacijaOut();
-  TweenMax.to("#dropdownPlaceholder", .7, {height:1594});
+  TweenMax.to("#dropdownPlaceholder", .7, {height:1595});
 
   
   //prikazi galerijo
@@ -476,7 +476,7 @@ function functionProizvodi() {
   TweenMax.to(window, .2, {scrollTo:{y:0}});
   document.getElementById("bodyId").style.overflow = "hidden";
   
-  TweenMax.to("#dropdownPlaceholder", .2, {height:710});
+  TweenMax.to("#dropdownPlaceholder", .2, {height:717});
   
   setTimeout(function(){
     closeDropdown(true, false, 4);
