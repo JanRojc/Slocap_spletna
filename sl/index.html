@@ -55,9 +55,9 @@
       	<path id="XMLID_56_" class="st3" d="M213.1,72.7H200V23.5h13.1V72.7z"/>
       </svg>
     </div>
+    
+    
   </div>
-  
-  
   <script src="../script/loading_screen.js"></script>
   
   
@@ -77,7 +77,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2"><a href="index.html"><img src="../images/logo_left.png" alt="SLOCAP d.o.o. Sežana" border="0" style="margin-left:20px"/></a><img src="../images/logo_right.png" alt="SLOCAP d.o.o. Sežana" border="0" /></td>
+        <td colspan="2"><a onclick="functionDoma(1)" class="cursorPointer"><img id="logoLeft" src="../images/logo_left.png" alt="SLOCAP d.o.o. Sežana" border="0" style="margin-left:20px"/></a><img src="../images/logo_right.png" alt="SLOCAP d.o.o. Sežana" border="0" /></td>
       </tr>
       <tr>
         <td colspan="2">&nbsp;</td>
@@ -107,18 +107,24 @@
             <span style="display:inline-block" class="paddingTop podjetjeId5">Za zagotavljanje visoke kvalitete svojih proizvodov podjetje uporablja samo materiale priznanih svetovnih proizvajalcev. Kupce proizvodov Slocap najdemo po vsej Evropi in po državah bivše Jugoslavije.</span>
           </div>
           <div id="layer3" class="paddingLeft">
-            <img id="slika1" src="../images/podjetje01.jpg" width="588" height="1" class="rounded_top" /><br /><br /> 
-            <img id="slika2" src="../images/podjetje02.jpg" width="588" height="1" /><br /><br /> 
-            <img id="slika3" src="../images/podjetje03.jpg" width="588" height="1" /><br /><br /> 
-            <img id="slika4" src="../images/podjetje04.jpg" width="588" height="1" class="rounded_bot"/>
+            <img id="slika1" src="../images/podjetje01.jpg" width="574" height="1" class="rounded_top" /><br /><br /> 
+            <img id="slika2" src="../images/podjetje02.jpg" width="574" height="1" /><br /><br /> 
+            <img id="slika3" src="../images/podjetje03.jpg" width="574" height="1" /><br /><br /> 
+            <img id="slika4" src="../images/podjetje04.jpg" width="574" height="1" class="rounded_bot"/>
           </div>
           <div id="layer4">
-            <span><button target="_self" class="proizvodiId1 button paddingTop" onclick="functionPVC()">Kapice PVC</button></span><br /> 
-            <button target="_self" class="button3" onclick="functionPVC()"><img id="proizvodiSlika1" src="../images/slocap_kapice.jpg" alt="Kapice PVC" border="0" height="1" class="rounded_top rounded_bot"/></button><br /><br /> 
-            <span><button target="_self" class="button proizvodiId2" onclick="functionPolilaminat()">Kapice polilaminat za steklenice penin</button></span><br /> 
-            <button target="_self" class="button3" onclick="functionPolilaminat()"><img src="../images/slocap_kapsuloni.jpg" alt="Kapice polilaminat za steklenice penin" border="0" height="192" class="proizvodiId2 rounded_top rounded_bot"/></button><br /><br /> 
-            <span><button target="_self" class="button proizvodiId3" onclick="functionAluminij()">Kapice Aluminij za sodčke</button></span><br />
-            <button target="_self" class="button3" onclick="functionAluminij()"><img src="../images/slocap_kalote.jpg" alt="Kapice Alumini za sodčke" border="0" height="192" class="proizvodiId3 rounded_top rounded_bot"/></button>
+            <div class="proizvodiId1">
+              <span><button target="_self" class="button paddingTop" onclick="functionPVC()">Kapice PVC</button></span><br /> 
+              <button target="_self" class="button3" onclick="functionPVC()"><img id="proizvodiSlika1" src="../images/slocap_kapice.jpg" alt="Kapice PVC" border="0" height="1" class="rounded_top rounded_bot"/></button><br /><br /> 
+            </div>
+            <div class="proizvodiId2">
+              <span><button target="_self" class="button" onclick="functionPolilaminat()">Kapice polilaminat za steklenice penin</button></span><br /> 
+              <button target="_self" class="button3" onclick="functionPolilaminat()"><img src="../images/slocap_kapsuloni.jpg" alt="Kapice polilaminat za steklenice penin" border="0" height="197" class="rounded_top rounded_bot"/></button><br /><br /> 
+            </div>
+            <div class="proizvodiId3">
+              <span><button target="_self" class="button" onclick="functionAluminij()">Kapice Aluminij za sodčke</button></span><br />
+              <button target="_self" class="button3" onclick="functionAluminij()"><img src="../images/slocap_kalote.jpg" alt="Kapice Alumini za sodčke" border="0" height="197" class="rounded_top rounded_bot"/></button>
+            </div>
           </div>
           <div id="layer5">
             <span style="display:inline-block" target="_self" class="pvcId1 style8 paddingTop">Kapice PVC</span><br /><br /> 
@@ -132,8 +138,10 @@
             <span style="display:inline-block" class="pvcId3 style5">Barve pokrovčka: v dveh barvah + relief - logo<br /><br /> 
               <div class="pvcId4" style="width:80px; height:80px; perspective:200px" onmouseenter="pdfAnimacija1()" onmouseleave="pdfAnimacijaOut1()">
                 <a href="../images/slocap_kapice.pdf" target="_blank">
-                  <img src="../images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf1"/>
-                  <img src="../images/pdf_download.png" alt="Prenesi" width="80" height="80" border="0" id="pdfDownload1"/>
+                  <div style="width:80px; height:80px">
+                    <img src="../images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf1"/>
+                    <img src="../images/pdf_download.png" alt="Prenesi" width="80" height="80" border="0" id="pdfDownload1"/>
+                  </div>
                 </a>
               </div>
             </span>
@@ -154,8 +162,10 @@
             <span style="display:inline-block" class="polilaminatId3 style5">Barva pokrovčka: v dveh barvah + 1 x topli tisk<br /><br /> 
               <div class="polilaminatId4" style="width:80px; height:80px; perspective:200px" onmouseenter="pdfAnimacija2()" onmouseleave="pdfAnimacijaOut2()">
                 <a href="../images/slocap_kapsuloni.pdf" target="_blank">
-                  <img src="../images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf2"/>
-                  <img src="../images/pdf_download.png" alt="Prenesi" width="80" height="80" border="0" id="pdfDownload2"/>
+                  <div style="width:80px; height:80px">
+                    <img src="../images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf2"/>
+                    <img src="../images/pdf_download.png" alt="Prenesi" width="80" height="80" border="0" id="pdfDownload2"/>
+                  </div>
                 </a>
               </div>
             </span>
@@ -170,15 +180,17 @@
             <span style="display:inline-block" class="aluminijId3 style5">Barve: v eni barvi<br /><br /> 
               <div class="aluminijId4" style="width:80px; height:80px; perspective:200px" onmouseenter="pdfAnimacija3()" onmouseleave="pdfAnimacijaOut3()">
                 <a href="../images/slocap_kalote.pdf" target="_blank">
-                  <img src="../images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf3"/>
-                  <img src="../images/pdf_download.png" alt="Prenesi" width="80" height="80" border="0" id="pdfDownload3"/>
+                  <div style="width:80px; height:80px">
+                    <img src="../images/pdf_icon.png" alt="Prenesi" width="80" height="80" border="0" id="pdf3"/>
+                    <img src="../images/pdf_download.png" alt="Prenesi" width="80" height="80" border="0" id="pdfDownload3"/>
+                  </div>
                 </a>
               </div>
             </span>
           </div>
           <div id="layer8" class="style5">
-            <img id="kontaktId1" src="../images/podjetje_slocap_b.jpg" width="573" height="1" border="0" class="rounded_top rounded_bot" /><br /><br /> 
-            <iframe class="kontaktId2" width="573" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.0549761857833!2d13.85618516569426!3d45.70993392503351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477b159fa1403c47%3A0x5708e34ec77402d8!2sCesta+na+Lenivec+30d%2C+6210+Se%C5%BEana!5e0!3m2!1ssl!2ssi!4v1508485303364" frameborder="0" style="border:0" allowfullscreen></iframe><br /> 
+            <img id="kontaktId1" src="../images/podjetje_slocap_b.jpg" width="574" height="1" border="0" class="rounded_top rounded_bot" /><br /><br /> 
+            <iframe class="kontaktId2" width="574" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.0549761857833!2d13.85618516569426!3d45.70993392503351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477b159fa1403c47%3A0x5708e34ec77402d8!2sCesta+na+Lenivec+30d%2C+6210+Se%C5%BEana!5e0!3m2!1ssl!2ssi!4v1508485303364" frameborder="0" style="border:0" allowfullscreen></iframe><br /> 
             <div class="kontaktId3"> 
               <span class="style9">Slocap d.o.o. Sežana</span><br /> 
               Cesta na Lenivec 30 D<br /> 

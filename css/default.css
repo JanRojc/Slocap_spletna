@@ -9,10 +9,13 @@ button:focus {
 }
 
 
+
 body {
   overflow-x: hidden;
   background-color:#999999;
   background-image: url(../images/background_logo.png);
+  background-position: calc(50vw + 70px);
+  padding-left: calc(100vw - 100%);
 }
 
 html,
@@ -29,6 +32,12 @@ body {
   background-repeat:no-repeat;
   width:818px;
   flex: 1 1 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cursorPointer:hover {
+  cursor: pointer;
 }
 
 .button {
@@ -67,10 +76,6 @@ body {
 	
 	float: right;
   line-height: 24px;
-}
-
-.position {
-  position:relative;
 }
 
 .positionSlikaSide {
@@ -156,6 +161,7 @@ a:active {
 
 #layer2 {
   position:absolute;
+  width: 574px;
   opacity: 0;
   z-index:2;
   max-width:588px;
@@ -232,11 +238,6 @@ a:active {
 #pdfDownload3 {
   position:absolute;
   z-index:6;
-}
-
-#bodyId {
-	position: absolute;
-	z-index: 1;
 }
 
 
