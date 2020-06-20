@@ -4,7 +4,7 @@ var stanje = 0;
 var animationComplete = true;
 
 // Doma-1, Podjetje-2, Galerija-3, Proizvodi-4, PVC-5, Polialuminat-6, Aluminij-7, Kontakt-8
-//scroll enabled: galerija, kontakt
+// scroll enabled: galerija, kontakt
 
 
 
@@ -16,9 +16,7 @@ var animationComplete = true;
 
 functionDoma();
 
-// body positioning
-document.getElementById("mainDiv").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
-document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
+
 
 // pdf animation timelines
 var t1 = new TimelineMax({paused:true});
@@ -61,10 +59,10 @@ timelineBtn4.fromTo("#btn4", {backgroundPosition: "-65px 0px"}, {backgroundPosit
 timelineBtn5.fromTo("#btn5", {backgroundPosition: "-70px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
 
   timelineBtn6 = new TimelineMax({paused:true});
-timelineBtn6.fromTo("#btn6", {backgroundPosition: "-194px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+timelineBtn6.fromTo("#btn6", {backgroundPosition: "-194px 0px"}, {backgroundPosition: "0px 0px", duration:.6});
 
   timelineBtn7 = new TimelineMax({paused:true});
-timelineBtn7.fromTo("#btn7", {backgroundPosition: "-137px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
+timelineBtn7.fromTo("#btn7", {backgroundPosition: "-137px 0px"}, {backgroundPosition: "0px 0px", duration:.5});
 
   timelineBtn8 = new TimelineMax({paused:true});
 timelineBtn8.fromTo("#btn8", {backgroundPosition: "-58px 0px"}, {backgroundPosition: "0px 0px", duration:.3});
@@ -96,10 +94,7 @@ reload();
 
 
 
-window.onresize = function () {
-  document.getElementById("mainDiv").style['margin-left'] = window.innerWidth / 2 - 409 + "px";
-  document.getElementById("bodyId").style['background-position'] = window.innerWidth / 2 - 409 + "px 0px";
-};
+
 
 
 
@@ -291,7 +286,7 @@ function underlineEngOut() {
 
 function showDropdown1() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
-      <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
+      <div id="dropdownDivId" style="background-color:#333333; position:relative" class="rounded_top rounded_bot paddingTop"> \
       <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
       <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
       <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
@@ -303,7 +298,7 @@ function showDropdown1() {
 
 function showDropdown2() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
-      <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
+      <div id="dropdownDivId" style="background-color:#333333; position:relative" class="rounded_top rounded_bot paddingTop"> \
       <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
       <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
       <div id="dropdownId1"><button onmouseenter="underlineBtn3In()" onmouseleave="underlineBtn3Out()" class="button2" onclick="functionGalerija()"><a id="btn3">- galerija</a></button></div> \
@@ -315,7 +310,7 @@ function showDropdown2() {
 
 function showDropdown3() {
   document.getElementById("dropdownPlaceholder").innerHTML = '\
-    <div id="dropdownDivId" style="background-color:#333333" class="rounded_top rounded_bot paddingTop position"> \
+    <div id="dropdownDivId" style="background-color:#333333; position:relative" class="rounded_top rounded_bot paddingTop"> \
     <div id="dropdownId7"><button onmouseenter="underlineBtn1In()" onmouseleave="underlineBtn1Out()" class="button" onclick="functionDoma()"><a id="btn1">Doma</a> </button></div> \
     <div id="dropdownId8"><button onmouseenter="underlineBtn2In()" onmouseleave="underlineBtn2Out()" class="button" onclick="functionPodjetje()"><img id="arrowhead1" src="../images/arrowhead.png" height="10" border="0"> <a id="btn2">O podjetju</a></button></div> \
     <div id="dropdownId5"><button onmouseenter="underlineBtn4In()" onmouseleave="underlineBtn4Out()" class="button" onclick="functionProizvodi()"><img id="arrowhead2" src="../images/arrowhead.png" height="10" border="0"> <a id="btn4">Proizvodi</a></button></div> \
@@ -330,15 +325,18 @@ function showDropdown3() {
 
 // main functions
 
-function functionDoma() {
-  if (stanje == 1 || !animationComplete) {
+function functionDoma(slikaLogo) {
+  if (stanje == 1 && slikaLogo == 1) {
+    errorAnimation("logoLeft");
+    return;
+  } else if (stanje == 1 || !animationComplete) {
     errorAnimation("dropdownId7");
     return;
   }
   
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  document.getElementById("bodyId").style.overflow = "hidden";
+  document.getElementById("bodyId").style["overflow-y"] = "auto";
   
   closeDropdown(true, true, 1);
   animacijaOut();
@@ -352,11 +350,11 @@ function functionDoma() {
     time = 400;
   }
   
-  //prikazi doma
+  // prikazi doma
   setTimeout(function(){
     stanje = 1;
     
-    //main animacija
+    // main animacija
     document.getElementById("layer1").style.opacity = 1;
     document.getElementById("layer1").style["pointer-events"] = "auto";
     TweenMax.fromTo(".domaId1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
@@ -379,16 +377,16 @@ function functionPodjetje() {
   // swipe("dropdownId8");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  document.getElementById("bodyId").style.overflow = "hidden";
+  document.getElementById("bodyId").style["overflow-y"] = "hidden";
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
 
   closeDropdown(false, true, 2);
   animacijaOut();
-  //prikazi podjetje
+  // prikazi podjetje
   setTimeout(function(){
     stanje = 2;
     
-    //main animacija
+    // main animacija
     document.getElementById("layer2").style.opacity = 1;
     document.getElementById("layer2").style["pointer-events"] = "auto";
     TweenMax.fromTo(".podjetjeId1", {opacity:0, y:100}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
@@ -396,6 +394,10 @@ function functionPodjetje() {
     TweenMax.fromTo(".podjetjeId3", {opacity:0, y:300}, {opacity:1, delay:.6, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".podjetjeId4", {opacity:0, y:300}, {opacity:1, delay:.8, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".podjetjeId5", {opacity:0, y:300}, {opacity:1, delay:1, y:0, duration:.5, ease: Power3.easeOut});
+    setTimeout(function(){
+      document.getElementById("bodyId").style["overflow-y"] = "auto";
+    }, 1500);
+    
     
     animationComplete = true;
   }, 400);
@@ -417,11 +419,11 @@ function functionGalerija() {
   TweenMax.to("#dropdownPlaceholder", .7, {height:1595});
 
   
-  //prikazi galerijo
+  // prikazi galerijo
   setTimeout(function(){
     stanje = 3;
     
-    //main animacija
+    // main animacija
     document.getElementById("slika1").style.height = "373px";
     document.getElementById("slika2").style.height = "392px";
     document.getElementById("slika3").style.height = "392px";
@@ -474,25 +476,24 @@ function functionProizvodi() {
   // swipe("dropdownId5");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  document.getElementById("bodyId").style.overflow = "hidden";
+  document.getElementById("bodyId").style["overflow-y"] = "auto";
   
-  TweenMax.to("#dropdownPlaceholder", .2, {height:717});
+  TweenMax.to("#dropdownPlaceholder", .2, {height:731});
   
   setTimeout(function(){
     closeDropdown(true, false, 4);
   },100);
   animacijaOut();
   
-  //prikazi proizvode
+  // prikazi proizvode
   setTimeout(function(){
     stanje = 4;
       
-    //main animacija
-    document.getElementById("proizvodiSlika1").style.height = "192px";
+    // main animacija
+    document.getElementById("proizvodiSlika1").style.height = "197px";
     document.getElementById("layer4").style.opacity = 1;
     document.getElementById("layer4").style["pointer-events"] = "auto";
     TweenMax.fromTo(".proizvodiId1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
-    TweenMax.fromTo("#proizvodiSlika1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".proizvodiId2", {opacity:0, y:300}, {opacity:1, delay:.4, y:0, duration:.5, ease: Power3.easeOut});
     TweenMax.fromTo(".proizvodiId3", {opacity:0, y:300}, {opacity:1, delay:.6, y:0, duration:.5, ease: Power3.easeOut});
 
@@ -511,17 +512,17 @@ function functionPVC() {
   // swipe("dropdownId2");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  document.getElementById("bodyId").style.overflow = "hidden";
+  document.getElementById("bodyId").style["overflow-y"] = "auto";
   
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
   
   animacijaOut();
   
-  //prikazi PVC
+  // prikazi PVC
   setTimeout(function(){
     stanje = 5;
       
-    //main animacija
+    // main animacija
     document.getElementById("layer5").style.opacity = 1;
     document.getElementById("layer5").style["pointer-events"] = "auto";
     TweenMax.fromTo(".pvcId1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
@@ -543,17 +544,17 @@ function functionPolilaminat() {
   // swipe("dropdownId3");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  document.getElementById("bodyId").style.overflow = "hidden";
+  document.getElementById("bodyId").style["overflow-y"] = "auto";
   
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
   
   animacijaOut();
   
-  //prikazi Polialuminat
+  // prikazi Polialuminat
   setTimeout(function(){
     stanje = 6;
     
-    //main animacija
+    // main animacija
     document.getElementById("layer6").style.opacity = 1;
     document.getElementById("layer6").style["pointer-events"] = "auto";
     TweenMax.fromTo(".polilaminatId1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
@@ -575,17 +576,17 @@ function functionAluminij() {
   // swipe("dropdownId4");
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  document.getElementById("bodyId").style.overflow = "hidden";
+  document.getElementById("bodyId").style["overflow-y"] = "auto";
   
   TweenMax.to("#dropdownPlaceholder", 1, {height:600});
   
   animacijaOut();
   
-  //prikazi Aluminij
+  // prikazi Aluminij
   setTimeout(function(){
     stanje = 7;
     
-    //main animacija
+    // main animacija
     document.getElementById("layer7").style.opacity = 1;
     document.getElementById("layer7").style["pointer-events"] = "auto";
     TweenMax.fromTo(".aluminijId1", {opacity:0, y:300}, {opacity:1, delay:.2, y:0, duration:.5, ease: Power3.easeOut});
@@ -614,11 +615,11 @@ function functionKontakt() {
   closeDropdown(true, true, 8);
   animacijaOut();
   
-  //prikazi Kontakt
+  // prikazi Kontakt
   setTimeout(function(){
     stanje = 8;
     
-    //main animacija
+    // main animacija
     document.getElementById("kontaktId1").style.height = "267px";
     document.getElementById("layer8").style.opacity = 1;
     document.getElementById("layer8").style["pointer-events"] = "auto";
@@ -714,7 +715,7 @@ function swipe(id) {
 }
 
 function animacijaOut() {
-  //trajanje animacije: 0.5-0.6s
+  // trajanje animacije: 0.5-0.6s
   switch (stanje) {
     case 0:
       break;
@@ -755,7 +756,6 @@ function animacijaOut() {
       break;
     case 4:
       TweenMax.to(".proizvodiId1", .3, {opacity:0, y:-100, delay:0, ease: Power3.easeIn});
-      TweenMax.to("#proizvodiSlika1", .3, {opacity:0, y:-100, delay:0, ease: Power3.easeIn});
       TweenMax.to(".proizvodiId2", .3, {opacity:0, y:-100, delay:.1, ease: Power3.easeIn});
       TweenMax.to(".proizvodiId3", .3, {opacity:0, y:-100, delay:.2, ease: Power3.easeIn});
       setTimeout(function(){

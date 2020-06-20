@@ -14,9 +14,9 @@ anime({
 TweenMax.to("#loadingScreen", 0, {x:-1});
 
 
-TweenMax.to("#loadingScreenBackground1", 1.5, {x:"-100%", delay:2, ease: Power3.easeInOut});
-TweenMax.to("#loadingScreenBackground2", 1.5, {x:"-100%", delay:2.05, ease: Power3.easeInOut});
-TweenMax.to("#loadingScreenBackground3", 1.5, {x:"-100%", delay:2.1, ease: Power3.easeInOut});
+TweenMax.to("#loadingScreenBackground1", 1.5, {x:"-101%", delay:1.7, ease: Power3.easeInOut});
+TweenMax.to("#loadingScreenBackground2", 1.5, {x:"-101%", delay:1.75, ease: Power3.easeInOut});
+TweenMax.to("#loadingScreenBackground3", 1.5, {x:"-101%", delay:1.8, ease: Power3.easeInOut});
 TweenMax.to("#loadingScreen", 1, {opacity:0, delay:4.4});
 
 setTimeout(function () {
