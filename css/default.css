@@ -102,10 +102,6 @@ body {
   padding-left: 14px;
 }
 
-#dropdownId1, #dropdownId2, #dropdownId3, #dropdownId4, #dropdownId5, #dropdownId6, #dropdownId7, #dropdownId8 {
-  background-image: url("../images/swipe.png");
-}
-
 .style1 {
 	color: #FFFFFF;
 	font-family: Tahoma;
@@ -156,6 +152,7 @@ a:active {
   position:absolute;
   opacity: 0;
   z-index:1;
+  width: 574px;
   pointer-events: none;
 }
 
@@ -298,4 +295,3 @@ a:active {
 .optimizacija {
   color:#999999;
 }
-
