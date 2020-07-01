@@ -336,8 +336,9 @@ function functionDoma(slikaLogo) {
   
   animationComplete = false;
   TweenMax.to(window, .2, {scrollTo:{y:0}});
-  document.getElementById("bodyId").style["overflow-y"] = "auto";
-  
+  if (stanje != 0) {
+	document.getElementById("bodyId").style["overflow-y"] = "auto";
+  }
   closeDropdown(true, true, 1);
   animacijaOut();
   var time;
