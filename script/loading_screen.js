@@ -1,6 +1,6 @@
 // loading screen
 
-document.getElementById("bodyId").style.overflow = "hidden";
+document.getElementById("bodyId").style["overflow-y"] = "hidden";
 document.getElementById("drawLogoId").style.opacity = 1;
 
 
@@ -26,4 +26,5 @@ setTimeout(function () {
 setTimeout(function () {
   document.getElementById("loadingScreen").style['pointer-events'] = "none";
   document.getElementById("bodyId").style["overflow-y"] = "auto";
+  xScroll();
 }, 3000);

@@ -809,3 +809,13 @@ function errorAnimation(idElementa) {
   TweenMax.to("#" + idElementa, .1, {x:5, delay:.05});
   TweenMax.to("#" + idElementa, .05, {x:0, delay:.15});
 }
+
+function xScroll() {
+	if (window.innerWidth < 818) {
+		document.getElementById("bodyId").style["overflow-x"] = "scroll";
+	} else {
+		document.getElementById("bodyId").style["overflow-x"] = "hidden";
+	}
+}
+
+window.addEventListener("resize", xScroll);
